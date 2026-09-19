@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og.png',
+        url: '/og-warm.png',
         width: 1734,
         height: 907,
         alt: 'Duet — Data for robots that work alongside humans.',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: 'Duet — Data for robots that work alongside humans',
     description:
       'A data layer for human collaboration: workflow intelligence for operators and training data for robots.',
-    images: ['/og.png'],
+    images: ['/og-warm.png'],
   },
 };
 
