@@ -12,14 +12,14 @@ const newsreader = Newsreader({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.duetlabs.co'),
-  title: 'Duet — Data for robots that work alongside humans',
+  title: 'Duet Labs',
   description:
     'Duet builds a data layer for human collaboration, creating workflow intelligence for operators and training data for robots.',
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Duet — Data for robots that work alongside humans',
+    title: 'Duet Labs',
     description:
       'A data layer for human collaboration: workflow intelligence for operators and training data for robots.',
     type: 'website',
@@ -28,13 +28,13 @@ export const metadata: Metadata = {
         url: '/og-warm.png',
         width: 1734,
         height: 907,
-        alt: 'Duet — Data for robots that work alongside humans.',
+        alt: 'Duet Labs.',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Duet — Data for robots that work alongside humans',
+    title: 'Duet Labs',
     description:
       'A data layer for human collaboration: workflow intelligence for operators and training data for robots.',
     images: ['/og-warm.png'],
