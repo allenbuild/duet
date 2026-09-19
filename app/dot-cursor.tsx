@@ -12,14 +12,16 @@ const seededVariation = (x: number, y: number, salt: number) => {
 };
 
 const cursorOutline = [
-  [4, 3],
-  [4, 31],
-  [11, 24],
-  [17, 37],
-  [22, 35],
-  [16, 22],
-  [29, 22],
+  [1.5, 1.5],
+  [1.5, 20.5],
+  [5.8, 16.2],
+  [9.8, 24.6],
+  [13.5, 22.9],
+  [9.6, 14.9],
+  [16.5, 14.9],
 ] as const;
+
+const cursorPath = 'M1.5 1.5V20.5L5.8 16.2L9.8 24.6L13.5 22.9L9.6 14.9H16.5Z';
 
 const pointIsInsideCursor = (x: number, y: number) => {
   let inside = false;
@@ -38,10 +40,10 @@ const pointIsInsideCursor = (x: number, y: number) => {
   return inside;
 };
 
-const cursorDots = Array.from({ length: 16 }, (_, row) =>
-  Array.from({ length: 12 }, (_, column) => {
-    const cx = 4 + column * 2.35 + (seededVariation(column, row, 11) - 0.5) * 0.75;
-    const cy = 3 + row * 2.35 + (seededVariation(column, row, 12) - 0.5) * 0.75;
+const cursorDots = Array.from({ length: 13 }, (_, row) =>
+  Array.from({ length: 9 }, (_, column) => {
+    const cx = 1.5 + column * 2 + (seededVariation(column, row, 11) - 0.5) * 0.5;
+    const cy = 1.5 + row * 2 + (seededVariation(column, row, 12) - 0.5) * 0.5;
 
     if (!pointIsInsideCursor(cx, cy)) return null;
 
@@ -50,7 +52,7 @@ const cursorDots = Array.from({ length: 16 }, (_, row) =>
     const amplitudeVariation = seededVariation(column, row, 3);
     const timingVariation = seededVariation(column, row, 4);
     const opacityVariation = seededVariation(column, row, 5);
-    const radius = 0.28 + 1.15 * Math.pow(sizeVariation, 1.45);
+    const radius = 0.22 + 0.55 * Math.pow(sizeVariation, 1.2);
     const pulseMinimum = radius * (0.58 + 0.18 * pulseVariation);
     const pulseMaximum = radius * (1.12 + 0.38 * amplitudeVariation);
     const pulseDuration = 1.6 + 1.7 * timingVariation;
@@ -89,7 +91,7 @@ export function DotCursor() {
 
     const paint = () => {
       frame = 0;
-      cursor.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-4px, -3px)`;
+      cursor.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-1.5px, -1.5px)`;
     };
 
     const onPointerMove = (event: PointerEvent) => {
@@ -139,18 +141,18 @@ export function DotCursor() {
 
   return (
     <div ref={cursorRef} className="dot-cursor" data-visible="false" aria-hidden="true">
-      <svg viewBox="0 0 34 42" focusable="false">
+      <svg viewBox="0 0 18 26" focusable="false">
         <defs>
           <radialGradient
             id="dot-cursor-gradient"
-            cx="4"
-            cy="3"
-            r="29"
+            cx="1.5"
+            cy="1.5"
+            r="14"
             gradientUnits="userSpaceOnUse"
           >
             <animate
               attributeName="r"
-              values="21;38;21"
+              values="10;19;10"
               dur="2.8s"
               keyTimes="0;0.5;1"
               keySplines="0.42 0 0.58 1;0.42 0 0.58 1"
@@ -164,15 +166,15 @@ export function DotCursor() {
             <stop offset="1" stopColor="#c79a70" />
           </radialGradient>
           <clipPath id="dot-cursor-outline">
-            <polygon points="4,3 4,31 11,24 17,37 22,35 16,22 29,22" />
+            <path d={cursorPath} />
           </clipPath>
         </defs>
 
         <g clipPath="url(#dot-cursor-outline)">
-          <circle cx="4" cy="3" r="0.72" fill="#4a2e21">
+          <circle cx="1.5" cy="1.5" r="0.42" fill="#4a2e21">
             <animate
               attributeName="r"
-              values="0.48;0.86;0.48"
+              values="0.3;0.55;0.3"
               dur="2.35s"
               keyTimes="0;0.5;1"
               keySplines="0.42 0 0.58 1;0.42 0 0.58 1"
@@ -202,6 +204,16 @@ export function DotCursor() {
             </circle>
           ))}
         </g>
+        <path
+          d={cursorPath}
+          fill="none"
+          stroke="#5f3b2b"
+          strokeWidth="1.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          opacity="0.92"
+          vectorEffect="non-scaling-stroke"
+        />
       </svg>
     </div>
   );
