@@ -21,9 +21,10 @@ export default function Home() {
         </p>
 
         <p>
-          <em>In middle school,</em> Allen placed seventh at the FTC World Championships
-          against teams dominated by high school seniors. Idhant pitched to the
-          Mastercard Foundation. Andrew raised a $30k investment fund, up 274% to date.
+          <em>In middle school,</em> Allen placed seventh at the FTC Robotics World
+          Championships against teams dominated by high school seniors. Idhant pitched
+          to the Mastercard Foundation. Andrew raised a $30k investment fund, up 274% to
+          date.
         </p>
 
         <div className="milestones">

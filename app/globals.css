@@ -195,7 +195,7 @@ body {
     drop-shadow(1px 1px 0 rgba(74, 46, 33, 0.38))
     drop-shadow(2px 2px 0 rgba(74, 46, 33, 0.13));
   mix-blend-mode: multiply;
-  transform: translateY(-0.02em);
+  transform: translateY(0.16em);
 }
 
 .founder-names {
