@@ -2,7 +2,7 @@
   --paper: #efdfc7;
   --ink: #4a2e21;
   --focus: #70452f;
-  --copy-size: clamp(0.95rem, 0.91rem + 0.14vw, 1.05rem);
+  --copy-size: clamp(1rem, 0.96rem + 0.16vw, 1.12rem);
   --flow-gap: 1.65em;
 }
 
@@ -126,9 +126,9 @@ body {
 }
 
 .site-footer {
-  width: 100%;
-  margin-top: auto;
-  padding: 0 clamp(1rem, 3vw, 2.25rem) clamp(1.25rem, 3vw, 2.25rem);
+  width: min(calc(100% - 2.8rem), 78ch);
+  margin: auto auto 0;
+  padding: 0 0 clamp(1.25rem, 3vw, 2.25rem);
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -185,12 +185,17 @@ body {
 }
 
 .linkedin-mark {
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.25rem;
+  height: 1.25rem;
   flex: none;
   fill: currentColor;
-  opacity: 0.38;
+  opacity: 0.5;
+  filter:
+    drop-shadow(-0.75px -0.75px 0 rgba(255, 248, 234, 0.8))
+    drop-shadow(1px 1px 0 rgba(74, 46, 33, 0.38))
+    drop-shadow(2px 2px 0 rgba(74, 46, 33, 0.13));
   mix-blend-mode: multiply;
+  transform: translateY(-0.02em);
 }
 
 .founder-names {
@@ -199,7 +204,7 @@ body {
   justify-content: flex-end;
   flex-wrap: wrap;
   gap: 0.12rem 0.55rem;
-  font-size: clamp(0.72rem, 0.69rem + 0.1vw, 0.79rem);
+  font-size: clamp(0.78rem, 0.74rem + 0.12vw, 0.86rem);
 }
 
 .founder-link {
@@ -260,7 +265,7 @@ html[data-dot-cursor-live] * {
 
 @media (max-width: 600px) {
   :root {
-    --copy-size: 0.96rem;
+    --copy-size: 1rem;
   }
 
   .letter {
@@ -274,6 +279,7 @@ html[data-dot-cursor-live] * {
   }
 
   .site-footer {
+    width: min(calc(100% - 2rem), 78ch);
     flex-direction: column-reverse;
     align-items: flex-start;
   }
@@ -333,6 +339,8 @@ html[data-dot-cursor-live] * {
 
   .linkedin-mark {
     opacity: 1;
+    filter: none;
     mix-blend-mode: normal;
+    transform: none;
   }
 }
