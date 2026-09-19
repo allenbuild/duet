@@ -49,7 +49,7 @@ export default function Home() {
           </strong>{' '}
           We process-mine human-human interaction data from real-world worksites to
           understand how teams coordinate, where workflows break, and why the best crews
-          move faster. Operators pay for workflow intelligence; frontier robotics labs
+          move faster. Operators pay for workflow intelligence. Frontier robotics labs
           license the resulting interactions as training data. One dataset, two
           customers: every deployment makes teams more efficient today and builds the
           data layer for robots working alongside humans tomorrow.
