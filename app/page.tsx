@@ -23,8 +23,7 @@ export default function Home() {
         <p>
           <em>In middle school,</em> Allen placed seventh at the FTC World Championships
           against teams dominated by high school seniors. Idhant pitched to the
-          Mastercard Foundation board. Andrew raised a $30k fund that has returned 274%
-          to date.
+          Mastercard Foundation. Andrew raised a $30k investment fund, up 274% to date.
         </p>
 
         <div className="milestones">
