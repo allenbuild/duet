@@ -15,7 +15,7 @@ export default function Home() {
       <article className="letter">
         <p>
           <em>In elementary school,</em> Andrew interviewed South Korea’s president for
-          a project on the country’s semiconductor industry. Allen presented on
+          a class project on the country’s semiconductor industry. Allen presented on
           self-driving LiDAR with an ISEF winner. Idhant convinced his teacher to give
           him lessons in string theory.
         </p>
