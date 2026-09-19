@@ -3,6 +3,7 @@
   --ink: #4a2e21;
   --focus: #70452f;
   --copy-size: clamp(0.95rem, 0.91rem + 0.14vw, 1.05rem);
+  --flow-gap: 1.65em;
 }
 
 * {
@@ -18,11 +19,10 @@ body {
   min-height: 100%;
   margin: 0;
   background-color: var(--paper);
-  background-image:
-    linear-gradient(rgba(248, 236, 216, 0.22), rgba(229, 202, 166, 0.08)),
-    url('/paper-texture.png');
-  background-size: cover, 1085px 363px;
-  background-repeat: no-repeat, repeat;
+  background-image: url('/paper-texture.png');
+  background-position: center top;
+  background-size: 1440px auto;
+  background-repeat: repeat;
   color: var(--ink);
   font-family: var(--font-newsreader), 'Iowan Old Style', Baskerville, 'Times New Roman', serif;
   font-size: var(--copy-size);
@@ -54,20 +54,23 @@ body {
   margin-top: 0;
 }
 
-.letter p {
-  margin-bottom: 1.65em;
+.letter p,
+.milestones,
+.turn {
+  margin-bottom: var(--flow-gap);
 }
 
 .letter > :last-child {
   margin-bottom: 0;
 }
 
-.milestones {
-  margin-bottom: 1.65em;
-}
-
 .milestones p {
   margin-bottom: 0.05em;
+}
+
+.milestones > :last-child,
+.turn > :last-child {
+  margin-bottom: 0;
 }
 
 .letter ul {
@@ -81,10 +84,6 @@ body {
 
 .letter li::marker {
   font-size: 0.72em;
-}
-
-.turn p:first-child {
-  margin-bottom: 0.55em;
 }
 
 .letter a {
