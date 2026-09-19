@@ -56,9 +56,9 @@ export default function Home() {
         </p>
 
         <p>
-          We’re hiring. If you’re exceptional with multimodal sensing, robot perception,
-          or operations, email{' '}
-          <a href="mailto:research@duetlabs.co">research@duetlabs.co</a>.
+          We’re hiring. If you’re exceptional with multimodal sensing, data infra, or
+          operations, email{' '}
+          <a href="mailto:allen@duetlabs.co">allen@duetlabs.co</a>.
         </p>
       </article>
     </main>
