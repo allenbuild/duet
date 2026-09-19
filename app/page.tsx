@@ -44,13 +44,14 @@ export default function Home() {
         </div>
 
         <p>
-          Duet is building a data layer for human collaboration. We process-mine
-          human-human interaction data from real-world worksites to understand how teams
-          coordinate, where workflows break, and why the best crews move faster.
-          Operators pay for workflow intelligence; frontier robotics labs license the
-          resulting interactions as training data. One dataset, two customers. Every
-          deployment streamlines operations today and expands the world’s first
-          off-the-shelf dataset for robots learning to work alongside humans.
+          <strong>Duet is building a data layer for human collaboration.</strong>{' '}
+          We process-mine human-human interaction data from real-world worksites to
+          understand how teams coordinate, where workflows break, and why the best crews
+          move faster. Operators pay for workflow intelligence; frontier robotics labs
+          license the resulting interactions as training data. One dataset, two
+          customers. Every deployment streamlines operations today and expands the
+          world’s first off-the-shelf dataset for robots learning to work alongside
+          humans.
         </p>
 
         <p>
