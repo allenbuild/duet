@@ -1,5 +1,5 @@
 const milestones = [
-  'Shipped multimodal robotics hardware for contracts with frontier AI labs',
+  'Shipped multimodal robotics hardware for contracts with frontier labs',
   'Joined HF0 (S26) and Founders, Inc. (Canopy) as Founders-in-Residence',
   'Built assistive wearables winning millions of dollars in academic scholarships',
   'Built edtech apps with 30k+ users and nonprofit organizations teaching 4k+ students',
@@ -52,7 +52,7 @@ export default function Home() {
           move faster. Operators pay for workflow intelligence. Frontier robotics labs
           license the resulting interactions as training data. One dataset, two
           customers: every deployment makes teams more efficient today and builds the
-          data layer for robots working alongside humans tomorrow.
+          data layer for robots working alongside them tomorrow.
         </p>
 
         <p>
