@@ -88,34 +88,57 @@ body {
   font-size: 0.72em;
 }
 
-.letter a {
+.paint-underline {
+  position: relative;
+  display: inline-block;
   color: inherit;
-  overflow-wrap: anywhere;
   padding-bottom: 0.3em;
   text-decoration: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 14' preserveAspectRatio='none'%3E%3Cpath d='M3 8.1C31 5.9 54 9.8 81 7.5S132 6.2 160 8.4S207 6.4 237 7.7' fill='none' stroke='%23A26645' stroke-width='5.2' stroke-linecap='round' stroke-linejoin='round' opacity='.68'/%3E%3Cpath d='M5 9.5C42 10.4 69 7.4 105 9.2S176 7.9 235 9.4' fill='none' stroke='%23C08A62' stroke-width='1.8' stroke-linecap='round' opacity='.38'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: 0 100%;
-  background-size: 100% 0.56em;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
 }
 
-.letter a:hover {
+.paint-underline::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 0.56em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 14' preserveAspectRatio='none'%3E%3Cpath d='M3 8.1C31 5.9 54 9.8 81 7.5S132 6.2 160 8.4S207 6.4 237 7.7' fill='none' stroke='%23A26645' stroke-width='5.2' stroke-linecap='round' stroke-linejoin='round' opacity='.68'/%3E%3Cpath d='M5 9.5C42 10.4 69 7.4 105 9.2S176 7.9 235 9.4' fill='none' stroke='%23C08A62' stroke-width='1.8' stroke-linecap='round' opacity='.38'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 100% 100%;
+  pointer-events: none;
+}
+
+.paint-underline:hover {
   color: #3f271c;
   filter: saturate(1.08) contrast(1.04);
 }
 
-.letter a:focus-visible {
+.paint-underline:hover::after {
+  animation: paint-redraw 480ms cubic-bezier(0.22, 0.65, 0.3, 1) both;
+}
+
+.paint-underline:focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 3px;
   border-radius: 2px;
 }
 
+.site-footer {
+  width: 100%;
+  margin-top: auto;
+  padding: 0 clamp(1rem, 3vw, 2.25rem) clamp(1.25rem, 3vw, 2.25rem);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.25rem 2rem;
+}
+
 .site-stamp {
   position: relative;
-  align-self: flex-start;
-  margin: auto 0 clamp(1.25rem, 3vw, 2.25rem) clamp(1rem, 3vw, 2.25rem);
+  flex: none;
+  margin: 0;
   padding: 0.42rem 0.58rem 0.36rem;
   border: 1px solid rgba(74, 46, 33, 0.68);
   border-radius: 2px;
@@ -149,6 +172,55 @@ body {
     -0.65px -0.65px 0 rgba(74, 46, 33, 0.14),
     0.8px 0.8px 0 rgba(255, 248, 234, 0.7);
   white-space: nowrap;
+}
+
+.linkedin-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-left: auto;
+  color: rgba(74, 46, 33, 0.76);
+  line-height: 1.25;
+}
+
+.linkedin-mark {
+  width: 1.2rem;
+  height: 1.2rem;
+  flex: none;
+  fill: currentColor;
+  opacity: 0.38;
+  mix-blend-mode: multiply;
+}
+
+.founder-names {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.12rem 0.55rem;
+  font-size: clamp(0.72rem, 0.69rem + 0.1vw, 0.79rem);
+}
+
+.founder-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.founder-names .paint-underline {
+  padding-bottom: 0.24em;
+  white-space: nowrap;
+}
+
+@keyframes paint-redraw {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
 }
 
 .dot-cursor {
@@ -200,6 +272,26 @@ html[data-dot-cursor-live] * {
   .letter ul {
     padding-left: 1.45em;
   }
+
+  .site-footer {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+
+  .linkedin-row {
+    justify-content: flex-start;
+    margin-left: 0;
+  }
+
+  .founder-names {
+    justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paint-underline:hover::after {
+    animation: none;
+  }
 }
 
 @media (forced-colors: active) {
@@ -228,11 +320,19 @@ html[data-dot-cursor-live] * {
     text-shadow: none;
   }
 
-  .letter a {
+  .paint-underline {
     color: LinkText;
-    background-image: none;
     text-decoration: underline;
     text-decoration-thickness: 0.12em;
     text-underline-offset: 0.14em;
+  }
+
+  .paint-underline::after {
+    display: none;
+  }
+
+  .linkedin-mark {
+    opacity: 1;
+    mix-blend-mode: normal;
   }
 }
