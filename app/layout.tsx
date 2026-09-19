@@ -10,10 +10,13 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://duet-labs.allenxtech.chatgpt.site'),
+  metadataBase: new URL('https://www.duetlabs.co'),
   title: 'Duet — Data for robots that work alongside humans',
   description:
     'Duet builds a data layer for human collaboration, creating workflow intelligence for operators and training data for robots.',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'Duet — Data for robots that work alongside humans',
     description:
