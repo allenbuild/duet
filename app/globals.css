@@ -1,0 +1,101 @@
+:root {
+  --paper: #fcfbf7;
+  --ink: #171716;
+  --focus: #655ae8;
+  --copy-size: clamp(1.25rem, 1.9vw, 1.75rem);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--paper);
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background:
+    radial-gradient(circle at 8% 4%, rgba(238, 234, 251, 0.6), transparent 34rem),
+    radial-gradient(circle at 92% 96%, rgba(234, 245, 245, 0.7), transparent 38rem),
+    var(--paper);
+  color: var(--ink);
+  font-family: var(--font-newsreader), 'Iowan Old Style', Palatino, Georgia, serif;
+  font-size: var(--copy-size);
+  font-weight: 400;
+  line-height: 1.42;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #e1dbfa;
+}
+
+.page-shell {
+  width: min(100%, 78ch);
+  margin: 0 auto;
+  padding: clamp(2rem, 6vw, 6rem) clamp(1.4rem, 5vw, 4.5rem) clamp(3.5rem, 8vw, 7rem);
+}
+
+.letter,
+.letter p,
+.letter ul {
+  margin-top: 0;
+}
+
+.letter p {
+  margin-bottom: 1.65em;
+}
+
+.milestones {
+  margin-bottom: 1.65em;
+}
+
+.milestones p {
+  margin-bottom: 0.05em;
+}
+
+.letter ul {
+  margin-bottom: 0;
+  padding-left: 1.8em;
+}
+
+.letter li {
+  padding-left: 0.28em;
+}
+
+.letter li::marker {
+  font-size: 0.72em;
+}
+
+.turn p:first-child {
+  margin-bottom: 0.55em;
+}
+
+.letter a {
+  color: inherit;
+  overflow-wrap: anywhere;
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.14em;
+}
+
+.letter a:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --copy-size: clamp(1.16rem, 5.25vw, 1.35rem);
+  }
+
+  .page-shell {
+    padding-top: 2rem;
+  }
+
+  .letter ul {
+    padding-left: 1.45em;
+  }
+}
