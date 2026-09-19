@@ -61,6 +61,12 @@ export default function Home() {
           <a href="mailto:allen@duetlabs.co">allen@duetlabs.co</a>.
         </p>
       </article>
+
+      <footer className="site-stamp">
+        <small>
+          © <time dateTime="2026">2026</time> Duet Labs
+        </small>
+      </footer>
     </main>
   );
 }
