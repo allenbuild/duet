@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Newsreader } from 'next/font/google';
+import { DotCursor } from './dot-cursor';
 import './globals.css';
 
 const newsreader = Newsreader({
@@ -47,7 +48,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={newsreader.variable}>{children}</body>
+      <body className={newsreader.variable}>
+        {children}
+        <DotCursor />
+      </body>
     </html>
   );
 }
