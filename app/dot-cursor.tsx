@@ -11,39 +11,55 @@ const seededVariation = (x: number, y: number, salt: number) => {
   return scaled - Math.floor(scaled);
 };
 
-const cursorDots = Array.from({ length: 11 }, (_, row) =>
-  Array.from({ length: 11 }, (_, column) => {
-    const gridX = column - 5;
-    const gridY = row - 5;
-    const distance = Math.hypot(gridX, gridY);
-    const edge = 5.15;
+const cursorOutline = [
+  [4, 3],
+  [4, 31],
+  [11, 24],
+  [17, 37],
+  [22, 35],
+  [16, 22],
+  [29, 22],
+] as const;
 
-    if (distance > edge) return null;
+const pointIsInsideCursor = (x: number, y: number) => {
+  let inside = false;
 
-    const falloff = 1 - distance / edge;
-    const sizeVariation = seededVariation(gridX, gridY, 1);
-    const pulseVariation = seededVariation(gridX, gridY, 2);
-    const timingVariation = seededVariation(gridX, gridY, 3);
-    const radialWeight = 0.38 + 0.62 * falloff;
-    const radius = Math.min(
-      1.75,
-      0.2 + 1.42 * radialWeight * Math.pow(sizeVariation, 0.68),
-    );
-    const pulseMinimum = Math.max(0.16, radius * (0.54 + pulseVariation * 0.18));
-    const pulseMaximum = Math.min(2, radius * (1.18 + timingVariation * 0.34));
-    const pulseDuration = 1.8 + timingVariation * 1.15;
+  for (let index = 0, previous = cursorOutline.length - 1; index < cursorOutline.length; previous = index++) {
+    const [currentX, currentY] = cursorOutline[index];
+    const [previousX, previousY] = cursorOutline[previous];
+    if (currentY > y !== previousY > y) {
+      const crossingX =
+        ((previousX - currentX) * (y - currentY)) / (previousY - currentY) + currentX;
+
+      if (x < crossingX) inside = !inside;
+    }
+  }
+
+  return inside;
+};
+
+const cursorDots = Array.from({ length: 16 }, (_, row) =>
+  Array.from({ length: 12 }, (_, column) => {
+    const cx = 4 + column * 2.35 + (seededVariation(column, row, 11) - 0.5) * 0.75;
+    const cy = 3 + row * 2.35 + (seededVariation(column, row, 12) - 0.5) * 0.75;
+
+    if (!pointIsInsideCursor(cx, cy)) return null;
+
+    const sizeVariation = seededVariation(column, row, 1);
+    const pulseVariation = seededVariation(column, row, 2);
+    const amplitudeVariation = seededVariation(column, row, 3);
+    const timingVariation = seededVariation(column, row, 4);
+    const opacityVariation = seededVariation(column, row, 5);
+    const radius = 0.28 + 1.15 * Math.pow(sizeVariation, 1.45);
+    const pulseMinimum = radius * (0.58 + 0.18 * pulseVariation);
+    const pulseMaximum = radius * (1.12 + 0.38 * amplitudeVariation);
+    const pulseDuration = 1.6 + 1.7 * timingVariation;
 
     return {
-      cx: 20 + gridX * 3.35,
-      cy: 20 + gridY * 3.35,
-      opacity: Math.min(
-        0.96,
-        Math.max(
-          0.22,
-          0.28 + 0.68 * Math.pow(falloff, 0.9) + (sizeVariation - 0.5) * 0.14,
-        ),
-      ),
-      pulseDelay: -seededVariation(gridX, gridY, 4) * pulseDuration,
+      cx,
+      cy,
+      opacity: 0.34 + opacityVariation * 0.6,
+      pulseDelay: -seededVariation(column, row, 6) * pulseDuration,
       pulseDuration,
       pulseMaximum,
       pulseMinimum,
@@ -73,8 +89,7 @@ export function DotCursor() {
 
     const paint = () => {
       frame = 0;
-      cursor.style.transform =
-        `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
+      cursor.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-4px, -3px)`;
     };
 
     const onPointerMove = (event: PointerEvent) => {
@@ -124,18 +139,18 @@ export function DotCursor() {
 
   return (
     <div ref={cursorRef} className="dot-cursor" data-visible="false" aria-hidden="true">
-      <svg viewBox="0 0 40 40" focusable="false">
+      <svg viewBox="0 0 34 42" focusable="false">
         <defs>
           <radialGradient
             id="dot-cursor-gradient"
-            cx="20"
-            cy="20"
-            r="17"
+            cx="4"
+            cy="3"
+            r="29"
             gradientUnits="userSpaceOnUse"
           >
             <animate
               attributeName="r"
-              values="13.5;20.5;13.5"
+              values="21;38;21"
               dur="2.8s"
               keyTimes="0;0.5;1"
               keySplines="0.42 0 0.58 1;0.42 0 0.58 1"
@@ -148,29 +163,45 @@ export function DotCursor() {
             <stop offset="0.8" stopColor="#a87452" />
             <stop offset="1" stopColor="#c79a70" />
           </radialGradient>
+          <clipPath id="dot-cursor-outline">
+            <polygon points="4,3 4,31 11,24 17,37 22,35 16,22 29,22" />
+          </clipPath>
         </defs>
 
-        {cursorDots.map((dot, index) => (
-          <circle
-            key={index}
-            cx={dot.cx}
-            cy={dot.cy}
-            r={dot.radius}
-            fill="url(#dot-cursor-gradient)"
-            opacity={dot.opacity}
-          >
+        <g clipPath="url(#dot-cursor-outline)">
+          <circle cx="4" cy="3" r="0.72" fill="#4a2e21">
             <animate
               attributeName="r"
-              values={`${dot.pulseMinimum};${dot.pulseMaximum};${dot.pulseMinimum}`}
-              dur={`${dot.pulseDuration}s`}
-              begin={`${dot.pulseDelay}s`}
+              values="0.48;0.86;0.48"
+              dur="2.35s"
               keyTimes="0;0.5;1"
               keySplines="0.42 0 0.58 1;0.42 0 0.58 1"
               calcMode="spline"
               repeatCount="indefinite"
             />
           </circle>
-        ))}
+          {cursorDots.map((dot, index) => (
+            <circle
+              key={index}
+              cx={dot.cx}
+              cy={dot.cy}
+              r={dot.radius}
+              fill="url(#dot-cursor-gradient)"
+              opacity={dot.opacity}
+            >
+              <animate
+                attributeName="r"
+                values={`${dot.pulseMinimum};${dot.pulseMaximum};${dot.pulseMinimum}`}
+                dur={`${dot.pulseDuration}s`}
+                begin={`${dot.pulseDelay}s`}
+                keyTimes="0;0.5;1"
+                keySplines="0.42 0 0.58 1;0.42 0 0.58 1"
+                calcMode="spline"
+                repeatCount="indefinite"
+              />
+            </circle>
+          ))}
+        </g>
       </svg>
     </div>
   );
