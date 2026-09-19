@@ -37,9 +37,9 @@ export default function Home() {
         </div>
 
         <div className="turn">
-          <p>We’ve spent most of our lives building robots.</p>
+          <p>We’ve spent most of our lives learning how robots work.</p>
           <p>
-            <em>This time, we’re building the data infrastructure they learn from.</em>
+            <em>This time, we’re helping robots learn how we work.</em>
           </p>
         </div>
 
