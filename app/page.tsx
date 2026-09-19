@@ -44,7 +44,9 @@ export default function Home() {
         </div>
 
         <p>
-          <strong>Duet is building a data layer for human collaboration.</strong>{' '}
+          <strong>
+            Duet is building the world&apos;s first data layer for human collaboration.
+          </strong>{' '}
           We process-mine human-human interaction data from real-world worksites to
           understand how teams coordinate, where workflows break, and why the best crews
           move faster. Operators pay for workflow intelligence; frontier robotics labs
