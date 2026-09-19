@@ -55,12 +55,12 @@ const cursorDots = Array.from({ length: 13 }, (_, row) =>
     const radius = 0.22 + 0.55 * Math.pow(sizeVariation, 1.2);
     const pulseMinimum = radius * (0.58 + 0.18 * pulseVariation);
     const pulseMaximum = radius * (1.12 + 0.38 * amplitudeVariation);
-    const pulseDuration = 1.6 + 1.7 * timingVariation;
+    const pulseDuration = 1.1 + 1.15 * timingVariation;
 
     return {
       cx,
       cy,
-      opacity: 0.34 + opacityVariation * 0.6,
+      opacity: 0.42 + opacityVariation * 0.55,
       pulseDelay: -seededVariation(column, row, 6) * pulseDuration,
       pulseDuration,
       pulseMaximum,
@@ -153,17 +153,17 @@ export function DotCursor() {
             <animate
               attributeName="r"
               values="10;19;10"
-              dur="2.8s"
+              dur="1.85s"
               keyTimes="0;0.5;1"
               keySplines="0.42 0 0.58 1;0.42 0 0.58 1"
               calcMode="spline"
               repeatCount="indefinite"
             />
-            <stop offset="0" stopColor="#4a2e21" />
-            <stop offset="0.32" stopColor="#60392a" />
-            <stop offset="0.58" stopColor="#805039" />
-            <stop offset="0.8" stopColor="#a87452" />
-            <stop offset="1" stopColor="#c79a70" />
+            <stop offset="0" stopColor="#42291d" />
+            <stop offset="0.32" stopColor="#573326" />
+            <stop offset="0.58" stopColor="#754831" />
+            <stop offset="0.8" stopColor="#9c6848" />
+            <stop offset="1" stopColor="#bc8b63" />
           </radialGradient>
           <clipPath id="dot-cursor-outline">
             <path d={cursorPath} />
@@ -171,11 +171,11 @@ export function DotCursor() {
         </defs>
 
         <g clipPath="url(#dot-cursor-outline)">
-          <circle cx="1.5" cy="1.5" r="0.42" fill="#4a2e21">
+          <circle cx="1.5" cy="1.5" r="0.42" fill="#42291d">
             <animate
               attributeName="r"
               values="0.3;0.55;0.3"
-              dur="2.35s"
+              dur="1.55s"
               keyTimes="0;0.5;1"
               keySplines="0.42 0 0.58 1;0.42 0 0.58 1"
               calcMode="spline"
