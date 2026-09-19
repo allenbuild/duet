@@ -3,8 +3,8 @@ const milestones = [
   'Joined HF0 (S26) and Founders, Inc. (Canopy) as Founders-in-Residence',
   'Built assistive wearables winning millions of dollars in academic scholarships',
   'Built edtech apps with 30k+ users and nonprofit organizations teaching 4k+ students',
-  'Interviewed by Space Center Houston (2x), NBC News, ABC News, and more',
-  'Conducted ML research at Northwestern University, Boston University, and the University of Michigan',
+  'Interviewed by Space Center Houston (2x), NBC News, ABC News, & more',
+  'Conducted ML research at Northwestern University, Boston University, & the University of Michigan',
   'Published research through IEEE, IIAI, and Harvard University',
   'Reached semifinal outrounds at ISEF and NSDA Debate Nationals',
 ];
@@ -21,7 +21,7 @@ export default function Home() {
         </p>
 
         <p>
-          <em>In middle school,</em> Allen placed 7th at the FTC World Championships
+          <em>In middle school,</em> Allen placed seventh at the FTC World Championships
           against teams dominated by high school seniors. Idhant pitched to the
           Mastercard Foundation board. Andrew raised a $30k fund that has returned 274%
           to date.
