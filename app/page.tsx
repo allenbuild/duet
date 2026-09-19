@@ -3,7 +3,7 @@ const milestones = [
   'Joined HF0 (S26) and Founders, Inc. (Canopy) as Founders-in-Residence',
   'Built assistive wearables winning millions of dollars in academic scholarships',
   'Built edtech apps with 30k+ users and nonprofit organizations teaching 4k+ students',
-  'Interviewed by Space Center Houston (2x), NBC News, ABC News, & more',
+  'Interviewed by Space Center Houston (2×), NBC News, ABC News, & more',
   'Conducted ML research at Northwestern University and Boston University (RISE)',
   'Published research through IEEE, IIAI, and Harvard University',
   'Reached semifinal outrounds at ISEF and NSDA Debate Nationals',
