@@ -49,9 +49,8 @@ export default function Home() {
           understand how teams coordinate, where workflows break, and why the best crews
           move faster. Operators pay for workflow intelligence; frontier robotics labs
           license the resulting interactions as training data. One dataset, two
-          customers: every deployment streamlines operations today and expands the
-          world’s first off-the-shelf dataset for robots learning to work alongside
-          humans.
+          customers: every deployment makes teams more efficient today and builds the
+          data layer for robots working alongside humans tomorrow.
         </p>
 
         <p>
