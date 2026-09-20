@@ -1,56 +1,38 @@
 import type { Metadata } from 'next';
-import { Newsreader } from 'next/font/google';
-import { DotCursor } from './dot-cursor';
+import { EB_Garamond } from 'next/font/google';
 import './globals.css';
 
-const newsreader = Newsreader({
-  variable: '--font-newsreader',
-  subsets: ['latin'],
-  display: 'swap',
-  style: ['normal', 'italic'],
-});
+const garamond = EB_Garamond({ subsets: ['latin'], weight: ['400', '500'], display: 'swap' });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.duetlabs.co'),
   title: 'Duet Labs',
   description:
-    'Duet builds a data layer for human collaboration, creating workflow intelligence for operators and training data for robots.',
-  alternates: {
-    canonical: '/',
-  },
+    'Duet process-mines human collaboration for the age of human-robot teams. Our thesis is that the next scaling law in robotics is human-human interaction data.',
+  alternates: { canonical: '/' },
   openGraph: {
     title: 'Duet Labs',
     description:
-      'A data layer for human collaboration: workflow intelligence for operators and training data for robots.',
+      'Duet process-mines human collaboration for the age of human-robot teams.',
     type: 'website',
-    images: [
-      {
-        url: '/og-warm.png',
-        width: 1734,
-        height: 907,
-        alt: 'Duet Labs.',
-      },
-    ],
+    images: [{ url: '/og-warm.png', width: 1734, height: 907, alt: 'Duet Labs.' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Duet Labs',
     description:
-      'A data layer for human collaboration: workflow intelligence for operators and training data for robots.',
+      'Duet process-mines human collaboration for the age of human-robot teams.',
     images: ['/og-warm.png'],
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={newsreader.variable}>
-        {children}
-        <DotCursor />
+      <body className={garamond.className}>
+        <main>{children}</main>
       </body>
     </html>
   );

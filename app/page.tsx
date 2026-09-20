@@ -1,118 +1,74 @@
-const milestones = [
-  'Shipped multimodal robotics hardware for contracts with frontier labs',
-  'Joined HF0 (S26) and Founders, Inc. (Canopy) as Founders-in-Residence',
-  'Built assistive wearables winning millions of dollars in academic scholarships',
-  'Built edtech apps with 30k+ users and nonprofit organizations teaching 4k+ students',
-  'Interviewed by Space Center Houston (2×), NBC News, ABC News, & more',
-  'Conducted ML research at Northwestern University and Boston University (RISE)',
-  'Published research through IEEE, IIAI, and Harvard University',
-  'Reached semifinal outrounds at ISEF and NSDA Debate Nationals',
-];
-
 export default function Home() {
   return (
-    <main className="page-shell">
-      <article className="letter">
-        <p>
-          <em>In elementary school,</em> Andrew interviewed South Korea’s president for
-          a class project on the country’s semiconductor industry. Allen presented on
-          self-driving LiDAR with an ISEF winner. Idhant convinced his teacher to give
-          him lessons in string theory.
-        </p>
+    <>
+      <h2>About Duet</h2>
+      <p>
+        Duet process-mines human collaboration for the age of human-robot teams.
+        Our thesis is that the next scaling law in robotics is human-human
+        interaction data.
+      </p>
 
-        <p>
-          <em>In middle school,</em> Allen placed seventh at the FTC Robotics World
-          Championships against teams dominated by high school seniors. Idhant pitched
-          to the Mastercard Foundation. Andrew raised a $30k investment fund, up 274% to
-          date.
-        </p>
+      <h2>Hiring</h2>
+      <p>we&apos;re recruiting builders!</p>
+      <ul>
+        <li>tldr: we&apos;re building the system of record for how people work together</li>
+        <li>with the mission to give physical AI its missing dataset: humans collaborating</li>
+        <li>you&apos;ll deploy on factory floors and job sites and ship the same week</li>
+        <li>hypergambling that human-human interaction data is the scarcest, highest-signal input to physical AI, and that selling the insights first lets us collect it orders of magnitude cheaper than anyone</li>
+        <li>with a small and exceptionally cracked team</li>
+        <li>solving the problem end to end (sensing, edge inference, event schemas, analytics, dataset licensing, hardware, biz ops)</li>
+      </ul>
+      <p>
+        if this interests you and you&apos;re cracked af, email{' '}
+        <a href="mailto:work@duetlabs.co">work@duetlabs.co</a>
+      </p>
 
-        <div className="milestones">
-          <p>Since then, we’ve:</p>
-          <ul>
-            {milestones.map((milestone) => (
-              <li key={milestone}>{milestone}</li>
-            ))}
-          </ul>
-        </div>
+      <h2>Researchers &amp; Labs</h2>
+      <p>
+        the supply side for human-robot collaboration. robots have watched millions
+        of hours of one person handling objects and almost none of two people
+        sharing a job. that is the dataset we collect:
+      </p>
+      <ul>
+        <li>multi-actor: handoffs, timing, intent, recovery</li>
+        <li>real crews, real worksites, real consequences</li>
+        <li>video, machine signals, and tool telemetry on one clock</li>
+        <li>outcome-linked and rights-cleared</li>
+        <li>IndEgo is 197 hours. we pass it in our first deployments</li>
+      </ul>
+      <p>
+        or tell us what you&apos;re looking for{' '}
+        <a href="mailto:research@duetlabs.co">research@duetlabs.co</a>
+      </p>
 
-        <div className="turn">
-          <p>We’ve spent most of our lives learning how robots work.</p>
-          <p>
-            <em>This time, we’re helping robots learn how we work.</em>
-          </p>
-        </div>
+      <h2>Why Now</h2>
+      <ul>
+        <li>factories already pay: 78% of large manufacturers put over a fifth of their improvement budget into smart manufacturing (Deloitte, 2025)</li>
+        <li>human video moves robots: 1,000 to 1 million hours took Dyna from 20% to 53% on 14 tasks (2026)</li>
+        <li>labs are buying: $3B of robotics data spend over two years (Bessemer, 2026). none of it is teamwork, and teamwork is the job</li>
+      </ul>
 
-        <p>
-          <strong>
-            Duet is building the world&apos;s first data layer for human collaboration.
-          </strong>{' '}
-          We process-mine human-human interaction data from real-world worksites to
-          understand how teams coordinate, where workflows break, and why the best crews
-          move faster. Operators pay for workflow intelligence. Frontier robotics labs
-          license the resulting interactions as training data. One dataset, two
-          customers: every deployment makes teams more efficient today and builds the
-          data layer for robots working alongside them tomorrow.
-        </p>
+      <h2>Priors</h2>
+      <p>
+        duet is a bet that physical AI scales like language did, on the biggest,
+        messiest, most human dataset there is. ours is teamwork.
+      </p>
+      <ul>
+        <li><a href="https://arxiv.org/abs/2001.08361">Scaling Laws for Neural Language Models</a></li>
+        <li><a href="https://arxiv.org/abs/2310.08864">Open X-Embodiment</a></li>
+        <li><a href="https://arxiv.org/abs/2410.24221">EgoMimic</a></li>
+        <li><a href="https://arxiv.org/abs/2311.18259">Ego-Exo4D</a></li>
+        <li><a href="https://arxiv.org/abs/2511.19684">IndEgo</a></li>
+        <li><a href="https://link.springer.com/book/10.1007/978-3-662-49851-4">Process Mining: Data Science in Action</a></li>
+      </ul>
 
-        <p>
-          We’re hiring. If you’re exceptional with multimodal sensing, data infra, or ops,
-          email{' '}
-          <a className="paint-underline" href="mailto:allen@duetlabs.co">
-            allen@duetlabs.co
-          </a>
-          .
-        </p>
-      </article>
-
-      <footer className="site-footer">
-        <div className="site-stamp">
-          <small>
-            © <time dateTime="2026">2026</time> Duet Labs
-          </small>
-        </div>
-
-        <nav className="linkedin-row" aria-label="Duet Labs founders on LinkedIn">
-          <svg
-            className="linkedin-mark"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-          >
-            <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.61 0 4.27 2.38 4.27 5.47v6.27ZM5.32 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.1 20.45H3.54V9H7.1v11.45Z" />
-          </svg>
-          <div className="founder-names">
-            <span className="founder-link">
-              <a
-                className="paint-underline"
-                href="https://www.linkedin.com/in/idhant-ranjan-078104254"
-                aria-label="Idhant Ranjan on LinkedIn"
-              >
-                Idhant Ranjan
-              </a>
-            </span>
-            <span className="founder-link">
-              <span aria-hidden="true">·</span>
-              <a
-                className="paint-underline"
-                href="https://www.linkedin.com/in/andrewheejay"
-                aria-label="Andrew Lee on LinkedIn"
-              >
-                Andrew Lee
-              </a>
-            </span>
-            <span className="founder-link">
-              <span aria-hidden="true">·</span>
-              <a
-                className="paint-underline"
-                href="https://www.linkedin.com/in/allenjxu"
-                aria-label="Allen Xu on LinkedIn"
-              >
-                Allen Xu
-              </a>
-            </span>
-          </div>
-        </nav>
-      </footer>
-    </main>
+      <h2>Contact</h2>
+      <p>
+        reach out to our founders:{' '}
+        <a href="https://idhant.dev">Idhant Ranjan</a>,{' '}
+        <a href="https://allenxu.dev">Allen Xu</a>,{' '}
+        <a href="https://andrewheejay.com">Andrew Lee</a>.
+      </p>
+    </>
   );
 }
