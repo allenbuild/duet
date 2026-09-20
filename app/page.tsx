@@ -36,7 +36,7 @@ const milestones = [
   'Joined HF0 (S26) and Founders, Inc. (Canopy) as Founders-in-Residence',
   'Built assistive wearables winning millions of dollars in academic scholarships',
   'Built edtech apps with 30k+ users and organizations teaching 4k+ students',
-  'Interviewed by Space Center Houston (2x), NBC News, ABC News, and more',
+  'Interviewed by Space Center Houston (2×), NBC News, ABC News, and more',
   'Conducted ML research at Northwestern University and Boston University (RISE)',
   'Published through IEEE, IIAI, and Harvard University',
 ];
@@ -94,7 +94,7 @@ export default function Home() {
             <h2 id="why-us-heading">Why Us</h2>
             <p>
               <em>In elementary school,</em> Andrew interviewed South Korea’s president for
-              a project on the country’s semiconductor industry. Allen presented on
+              a class project on the country’s semiconductor industry. Allen presented on
               self-driving LiDAR with an ISEF winner. Idhant convinced his teacher to give
               him lessons in string theory.
             </p>
@@ -102,7 +102,7 @@ export default function Home() {
             <p>
               <em>In middle school,</em> Allen placed 7th at the FTC Robotics World
               Championships against teams dominated by high school seniors. Idhant pitched
-              to the Mastercard Foundation board. Andrew raised a $30k fund, now up 274%.
+              to Mastercard. Andrew raised a $30k fund, now up 274%.
             </p>
 
             <div className="milestones">
@@ -115,9 +115,9 @@ export default function Home() {
             </div>
 
             <div className="turn">
-              <p>We’ve spent most of our lives building robots.</p>
               <p>
-                <em>This time, we’re building the data infrastructure they learn from.</em>
+                We’ve spent most of our lives building robots.{' '}
+                <em>This time, we’re building the data layer they learn from.</em>
               </p>
             </div>
           </section>
@@ -127,8 +127,8 @@ export default function Home() {
             <p>
               We’re hiring. If you’re exceptional with multimodal sensing, data infra, or
               ops, email{' '}
-              <a className="paint-underline" href="mailto:research@duetlabs.co">
-                research@duetlabs.co
+              <a className="paint-underline" href="mailto:allen@duetlabs.co">
+                allen@duetlabs.co
               </a>
               .
             </p>
