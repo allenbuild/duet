@@ -152,7 +152,7 @@ body {
   bottom: 0;
   left: 0;
   height: 0.56em;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 14' preserveAspectRatio='none'%3E%3Cpath d='M3 8.1C31 5.9 54 9.8 81 7.5S132 6.2 160 8.4S207 6.4 237 7.7' fill='none' stroke='%237B8388' stroke-width='5.2' stroke-linecap='round' stroke-linejoin='round' opacity='.68'/%3E%3Cpath d='M5 9.5C42 10.4 69 7.4 105 9.2S176 7.9 235 9.4' fill='none' stroke='%23A7ADB1' stroke-width='1.8' stroke-linecap='round' opacity='.38'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 14' preserveAspectRatio='none'%3E%3Cpath d='M3 8.1C31 5.9 54 9.8 81 7.5S132 6.2 160 8.4S207 6.4 237 7.7' fill='none' stroke='%23A7ADB1' stroke-width='5.2' stroke-linecap='round' stroke-linejoin='round' opacity='.8'/%3E%3Cpath d='M5 9.5C42 10.4 69 7.4 105 9.2S176 7.9 235 9.4' fill='none' stroke='%23C5CACE' stroke-width='1.8' stroke-linecap='round' opacity='.38'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: left bottom;
   background-size: 100% 100%;
@@ -192,7 +192,7 @@ body {
   border: 1px solid rgba(94, 102, 108, 0.68);
   border-radius: 2px;
   background: rgba(244, 247, 247, 0.2);
-  color: var(--ink);
+  color: #6f787e;
   box-shadow:
     1px 1px 0 rgba(94, 102, 108, 0.24),
     2px 2px 0 rgba(255, 255, 255, 0.68),
@@ -229,7 +229,7 @@ body {
   justify-content: flex-end;
   gap: 0.6rem;
   margin-left: auto;
-  color: var(--ink);
+  color: #6f787e;
   line-height: 1.25;
 }
 
@@ -270,8 +270,12 @@ body {
 .founder-names .paint-underline::after {
   bottom: 0.14em;
   height: 1px;
-  background: currentColor;
-  opacity: 0.65;
+  background: var(--accent-light);
+  opacity: 1;
+}
+
+.founder-names .paint-underline:hover {
+  color: #59636a;
 }
 
 .factory-scene {
