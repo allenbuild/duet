@@ -1,5 +1,5 @@
 :root {
-  --paper: #f4f7f7;
+  --paper: #fafcfc;
   --ink: #374147;
   --accent: #7b8388;
   --accent-light: #a7adb1;
@@ -23,7 +23,9 @@ body {
   margin: 0;
   overflow-x: clip;
   background-color: var(--paper);
-  background-image: url('/graph-paper.png');
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)),
+    url('/graph-paper.png');
   background-position: left top;
   background-size: 256px 256px;
   background-repeat: repeat;
@@ -100,6 +102,14 @@ body {
 .letter ul {
   margin-bottom: 0;
   padding-left: 1.8em;
+}
+
+.list-intro {
+  margin-bottom: -0.42em !important;
+}
+
+.copy-section > .dash-list {
+  margin-bottom: var(--flow-gap);
 }
 
 .letter li {
@@ -258,14 +268,14 @@ body {
 }
 
 .factory-scene {
-  width: min(100%, 1600px);
-  aspect-ratio: 1600 / 888;
-  margin: 0 auto;
+  width: 100%;
+  height: clamp(13rem, 30vw, 30rem);
+  margin: 0;
   flex: none;
   overflow: hidden;
   background-image: url('/factory-linework.jpeg');
   background-position: center top;
-  background-size: 100% auto;
+  background-size: 100% 111.15%;
   background-repeat: no-repeat;
   filter: grayscale(1) contrast(1.06);
   mix-blend-mode: multiply;

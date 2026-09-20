@@ -28,14 +28,14 @@ export default function Home() {
           <section className="copy-section" aria-labelledby="thesis-heading">
             <h1 id="thesis-heading">Thesis</h1>
             <p>
-              <em>
-                Duet process-mines human collaboration into workflow data for industrial
-                operators and training data for frontier robotics labs.
-              </em>
+              Duet process-mines human collaboration into workflow data for industrial
+              operators and training data for frontier robotics labs.{' '}
+              <strong>
+                We believe human-human interaction data is robotics’ next scaling law.
+              </strong>
             </p>
-            <p>We believe human-human interaction data is robotics’ next scaling law.</p>
 
-            <p>
+            <p className="list-intro">
               General-purpose robots have seen millions of hours of people working alone,
               and almost none of people working together. To our knowledge, ETH Zurich’s
               CoMind is the largest paired human-collaboration dataset at just 41 hours.
@@ -58,7 +58,7 @@ export default function Home() {
 
           <section className="copy-section" aria-labelledby="why-now-heading">
             <h2 id="why-now-heading">Why Now</h2>
-            <p>Duet is a bet on three converging shifts:</p>
+            <p className="list-intro">Duet is a bet on three converging shifts:</p>
             <ul className="dash-list">
               {marketShifts.map((shift) => (
                 <li key={shift}>{shift}</li>
