@@ -1,13 +1,34 @@
 const collaborationDimensions = [
-  'Physical coordination: handoffs, shared loads, joint manipulation',
-  'Task coordination: role division, sequencing, turn-taking',
-  'Interactive adaptation: intent signaling, response, correction, recovery',
+  {
+    label: 'Physical coordination',
+    description: 'handoffs, shared loads, joint manipulation',
+  },
+  {
+    label: 'Task coordination',
+    description: 'role division, sequencing, turn-taking',
+  },
+  {
+    label: 'Interactive adaptation',
+    description: 'intent signaling, response, correction, recovery',
+  },
 ];
 
 const marketShifts = [
-  'Supply-side: Factories are generating more data, with 78% of large manufacturers putting over 20% of improvement budgets into smart manufacturing (Deloitte, 2025).',
-  'Model-side: Robots are learning more from data, with 1,000× more pretraining raising average task performance from 20% to 53% (Dyna Robotics, 2026).',
-  'Demand-side: Labs are spending more on data, with robotics data spend expected to exceed $3B over the next two years (Bessemer, 2026).',
+  {
+    label: 'Supply-side',
+    description:
+      'Factories are generating more data, with 78% of large manufacturers putting over 20% of improvement budgets into smart manufacturing (Deloitte, 2025).',
+  },
+  {
+    label: 'Model-side',
+    description:
+      'Robots are learning more from data, with 1,000× more pretraining raising average task performance from 20% to 53% (Dyna Robotics, 2026).',
+  },
+  {
+    label: 'Demand-side',
+    description:
+      'Labs are spending more on data, with robotics data spend expected to exceed $3B over the next two years (Bessemer, 2026).',
+  },
 ];
 
 const milestones = [
@@ -42,17 +63,18 @@ export default function Home() {
               Duet’s dataset captures what single-actor data misses:
             </p>
             <ul className="dash-list">
-              {collaborationDimensions.map((dimension) => (
-                <li key={dimension}>{dimension}</li>
+              {collaborationDimensions.map(({ label, description }) => (
+                <li key={label}>
+                  <em>{label}:</em> {description}
+                </li>
               ))}
             </ul>
 
             <p>
               And of course, we capture these interactions across diverse, real-world
-              worksites to understand how teams coordinate, where workflows break, and why
-              the best crews move faster. One dataset, two customers: each deployment
-              improves operations for teams today and builds training data for robots
-              working alongside them tomorrow.
+              worksites. One dataset, two customers: each deployment improves operations
+              for teams today and builds training data for robots working alongside them
+              tomorrow.
             </p>
           </section>
 
@@ -60,8 +82,10 @@ export default function Home() {
             <h2 id="why-now-heading">Why Now</h2>
             <p className="list-intro">Duet is a bet on three converging shifts:</p>
             <ul className="dash-list">
-              {marketShifts.map((shift) => (
-                <li key={shift}>{shift}</li>
+              {marketShifts.map(({ label, description }) => (
+                <li key={label}>
+                  <em>{label}:</em> {description}
+                </li>
               ))}
             </ul>
           </section>
@@ -76,10 +100,9 @@ export default function Home() {
             </p>
 
             <p>
-              <em>In middle school,</em> Allen placed 7th at the FTC World Championships
-              against teams dominated by high school seniors. Idhant pitched to the
-              Mastercard Foundation board. Andrew raised a $30k fund that has returned 274%
-              to date.
+              <em>In middle school,</em> Allen placed 7th at the FTC Robotics World
+              Championships against teams dominated by high school seniors. Idhant pitched
+              to the Mastercard Foundation board. Andrew raised a $30k fund, now up 274%.
             </p>
 
             <div className="milestones">
@@ -102,8 +125,8 @@ export default function Home() {
           <section className="copy-section contact-section" aria-labelledby="contact-heading">
             <h2 id="contact-heading">Contact</h2>
             <p>
-              We’re hiring. If you’re exceptional with multimodal sensing, robot perception,
-              or operations, email{' '}
+              We’re hiring. If you’re exceptional with multimodal sensing, data infra, or
+              ops, email{' '}
               <a className="paint-underline" href="mailto:research@duetlabs.co">
                 research@duetlabs.co
               </a>

@@ -4,9 +4,9 @@
   --accent: #7b8388;
   --accent-light: #a7adb1;
   --focus: #59666e;
-  --copy-size: clamp(1rem, 0.96rem + 0.16vw, 1.12rem);
-  --flow-gap: 1.5em;
-  --section-gap: 2.35em;
+  --copy-size: clamp(0.9rem, 0.86rem + 0.12vw, 1.02rem);
+  --flow-gap: 1em;
+  --section-gap: 1.55em;
 }
 
 * {
@@ -24,7 +24,7 @@ body {
   overflow-x: clip;
   background-color: var(--paper);
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)),
+    linear-gradient(rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.68)),
     url('/graph-paper.png');
   background-position: left top;
   background-size: 256px 256px;
@@ -33,7 +33,7 @@ body {
   font-family: var(--font-newsreader), 'Iowan Old Style', Baskerville, 'Times New Roman', serif;
   font-size: var(--copy-size);
   font-weight: 400;
-  line-height: 1.48;
+  line-height: 1.36;
   letter-spacing: -0.005em;
   font-optical-sizing: auto;
   text-rendering: optimizeLegibility;
@@ -55,10 +55,10 @@ body {
 }
 
 .letter {
-  width: min(calc(100% - 2.8rem), 78ch);
+  width: min(calc(100% - 3rem), 78ch);
   margin: 0 auto;
-  padding-top: clamp(2.5rem, 6vw, 6rem);
-  padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
+  padding-top: clamp(1.5rem, 3vw, 2.75rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .letter h1,
@@ -175,7 +175,7 @@ body {
 }
 
 .site-footer {
-  width: min(calc(100% - 2.8rem), 78ch);
+  width: min(calc(100% - 3rem), 78ch);
   margin: auto auto 0;
   padding: 0 0 clamp(1.4rem, 3vw, 2.4rem);
   display: flex;
@@ -269,18 +269,27 @@ body {
 
 .factory-scene {
   width: 100%;
-  aspect-ratio: 1672 / 790;
+  height: min(44.86vw, 40rem);
   margin: 0;
   flex: none;
+  position: relative;
   overflow: hidden;
-  background-image: url('/factory-linework-wide.png');
-  background-position: center top;
-  background-size: 100% auto;
-  background-repeat: no-repeat;
   filter: grayscale(1) contrast(1.06);
   mix-blend-mode: multiply;
   opacity: 0.5;
   pointer-events: none;
+}
+
+.factory-scene::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  background-image: url('/factory-linework-wide.png?v=3');
+  background-position: center top;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 @keyframes paint-redraw {
@@ -330,9 +339,9 @@ html[data-dot-cursor-live] * {
 
 @media (max-width: 600px) {
   :root {
-    --copy-size: 1rem;
-    --flow-gap: 1.4em;
-    --section-gap: 2.1em;
+    --copy-size: 0.92rem;
+    --flow-gap: 1.05em;
+    --section-gap: 1.6em;
   }
 
   .letter {
