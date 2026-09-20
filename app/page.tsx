@@ -1,69 +1,117 @@
+const collaborationDimensions = [
+  'Physical coordination: handoffs, shared loads, joint manipulation',
+  'Task coordination: role division, sequencing, turn-taking',
+  'Interactive adaptation: intent signaling, response, correction, recovery',
+];
+
+const marketShifts = [
+  'Supply-side: Factories are generating more data, with 78% of large manufacturers putting over 20% of improvement budgets into smart manufacturing (Deloitte, 2025).',
+  'Model-side: Robots are learning more from data, with 1,000× more pretraining raising average task performance from 20% to 53% (Dyna Robotics, 2026).',
+  'Demand-side: Labs are spending more on data, with robotics data spend expected to exceed $3B over the next two years (Bessemer, 2026).',
+];
+
 const milestones = [
-  'Shipped multimodal robotics hardware for contracts with frontier labs',
+  'Shipped multimodal robotics hardware for frontier lab contracts',
   'Joined HF0 (S26) and Founders, Inc. (Canopy) as Founders-in-Residence',
   'Built assistive wearables winning millions of dollars in academic scholarships',
-  'Built edtech apps with 30k+ users and nonprofit organizations teaching 4k+ students',
-  'Interviewed by Space Center Houston (2×), NBC News, ABC News, & more',
+  'Built edtech apps with 30k+ users and organizations teaching 4k+ students',
+  'Interviewed by Space Center Houston (2x), NBC News, ABC News, and more',
   'Conducted ML research at Northwestern University and Boston University (RISE)',
-  'Published research through IEEE, IIAI, and Harvard University',
-  'Reached semifinal outrounds at ISEF and NSDA Debate Nationals',
+  'Published through IEEE, IIAI, and Harvard University',
 ];
 
 export default function Home() {
   return (
-    <main className="page-shell">
-      <article className="letter">
-        <p>
-          <em>In elementary school,</em> Andrew interviewed South Korea’s president for
-          a class project on the country’s semiconductor industry. Allen presented on
-          self-driving LiDAR with an ISEF winner. Idhant convinced his teacher to give
-          him lessons in string theory.
-        </p>
+    <div className="page-shell">
+      <main className="site-main">
+        <article className="letter">
+          <section className="copy-section" aria-labelledby="thesis-heading">
+            <h1 id="thesis-heading">Thesis</h1>
+            <p>
+              <em>
+                Duet process-mines human collaboration into workflow data for industrial
+                operators and training data for frontier robotics labs.
+              </em>
+            </p>
+            <p>We believe human-human interaction data is robotics’ next scaling law.</p>
 
-        <p>
-          <em>In middle school,</em> Allen placed seventh at the FTC Robotics World
-          Championships against teams dominated by high school seniors. Idhant pitched
-          to the Mastercard Foundation. Andrew raised a $30k investment fund, up 274% to
-          date.
-        </p>
+            <p>
+              General-purpose robots have seen millions of hours of people working alone,
+              and almost none of people working together. To our knowledge, ETH Zurich’s
+              CoMind is the largest paired human-collaboration dataset at just 41 hours.
+              Duet’s dataset captures what single-actor data misses:
+            </p>
+            <ul className="dash-list">
+              {collaborationDimensions.map((dimension) => (
+                <li key={dimension}>{dimension}</li>
+              ))}
+            </ul>
 
-        <div className="milestones">
-          <p>Since then, we’ve:</p>
-          <ul>
-            {milestones.map((milestone) => (
-              <li key={milestone}>{milestone}</li>
-            ))}
-          </ul>
-        </div>
+            <p>
+              And of course, we capture these interactions across diverse, real-world
+              worksites to understand how teams coordinate, where workflows break, and why
+              the best crews move faster. One dataset, two customers: each deployment
+              improves operations for teams today and builds training data for robots
+              working alongside them tomorrow.
+            </p>
+          </section>
 
-        <div className="turn">
-          <p>We’ve spent most of our lives learning how robots work.</p>
-          <p>
-            <em>This time, we’re helping robots learn how we work.</em>
-          </p>
-        </div>
+          <section className="copy-section" aria-labelledby="why-now-heading">
+            <h2 id="why-now-heading">Why Now</h2>
+            <p>Duet is a bet on three converging shifts:</p>
+            <ul className="dash-list">
+              {marketShifts.map((shift) => (
+                <li key={shift}>{shift}</li>
+              ))}
+            </ul>
+          </section>
 
-        <p>
-          <strong>
-            Duet is building the world&apos;s first data layer for human collaboration.
-          </strong>{' '}
-          We process-mine human-human interaction data from real-world worksites to
-          understand how teams coordinate, where workflows break, and why the best crews
-          move faster. Operators pay for workflow intelligence. Frontier robotics labs
-          license the resulting interactions as training data. One dataset, two
-          customers: every deployment makes teams more efficient today and builds the
-          data layer for robots working alongside them tomorrow.
-        </p>
+          <section className="copy-section" aria-labelledby="why-us-heading">
+            <h2 id="why-us-heading">Why Us</h2>
+            <p>
+              <em>In elementary school,</em> Andrew interviewed South Korea’s president for
+              a project on the country’s semiconductor industry. Allen presented on
+              self-driving LiDAR with an ISEF winner. Idhant convinced his teacher to give
+              him lessons in string theory.
+            </p>
 
-        <p>
-          We’re hiring. If you’re exceptional with multimodal sensing, data infra, or ops,
-          email{' '}
-          <a className="paint-underline" href="mailto:allen@duetlabs.co">
-            allen@duetlabs.co
-          </a>
-          .
-        </p>
-      </article>
+            <p>
+              <em>In middle school,</em> Allen placed 7th at the FTC World Championships
+              against teams dominated by high school seniors. Idhant pitched to the
+              Mastercard Foundation board. Andrew raised a $30k fund that has returned 274%
+              to date.
+            </p>
+
+            <div className="milestones">
+              <p>Since then, we’ve:</p>
+              <ul>
+                {milestones.map((milestone) => (
+                  <li key={milestone}>{milestone}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="turn">
+              <p>We’ve spent most of our lives building robots.</p>
+              <p>
+                <em>This time, we’re building the data infrastructure they learn from.</em>
+              </p>
+            </div>
+          </section>
+
+          <section className="copy-section contact-section" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact</h2>
+            <p>
+              We’re hiring. If you’re exceptional with multimodal sensing, robot perception,
+              or operations, email{' '}
+              <a className="paint-underline" href="mailto:research@duetlabs.co">
+                research@duetlabs.co
+              </a>
+              .
+            </p>
+          </section>
+        </article>
+      </main>
 
       <footer className="site-footer">
         <div className="site-stamp">
@@ -73,11 +121,7 @@ export default function Home() {
         </div>
 
         <nav className="linkedin-row" aria-label="Duet Labs founders on LinkedIn">
-          <svg
-            className="linkedin-mark"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-          >
+          <svg className="linkedin-mark" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.61 0 4.27 2.38 4.27 5.47v6.27ZM5.32 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.1 20.45H3.54V9H7.1v11.45Z" />
           </svg>
           <div className="founder-names">
@@ -113,6 +157,8 @@ export default function Home() {
           </div>
         </nav>
       </footer>
-    </main>
+
+      <div className="factory-scene" aria-hidden="true" />
+    </div>
   );
 }

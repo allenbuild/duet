@@ -159,11 +159,11 @@ export function DotCursor() {
               calcMode="spline"
               repeatCount="indefinite"
             />
-            <stop offset="0" stopColor="#42291d" />
-            <stop offset="0.32" stopColor="#573326" />
-            <stop offset="0.58" stopColor="#754831" />
-            <stop offset="0.8" stopColor="#9c6848" />
-            <stop offset="1" stopColor="#bc8b63" />
+            <stop offset="0" stopColor="#3f494f" />
+            <stop offset="0.32" stopColor="#536068" />
+            <stop offset="0.58" stopColor="#69757d" />
+            <stop offset="0.8" stopColor="#87939a" />
+            <stop offset="1" stopColor="#aab3b8" />
           </radialGradient>
           <clipPath id="dot-cursor-outline">
             <path d={cursorPath} />
@@ -171,7 +171,7 @@ export function DotCursor() {
         </defs>
 
         <g clipPath="url(#dot-cursor-outline)">
-          <circle cx="1.5" cy="1.5" r="0.42" fill="#42291d">
+          <circle cx="1.5" cy="1.5" r="0.42" fill="#3f494f">
             <animate
               attributeName="r"
               values="0.3;0.55;0.3"
@@ -207,7 +207,7 @@ export function DotCursor() {
         <path
           d={cursorPath}
           fill="none"
-          stroke="#5f3b2b"
+          stroke="#56636b"
           strokeWidth="1.25"
           strokeLinecap="round"
           strokeLinejoin="round"
