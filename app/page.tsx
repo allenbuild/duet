@@ -50,7 +50,7 @@ export default function Home() {
             <h1 id="thesis-heading">Thesis</h1>
             <p>
               Duet process-mines human collaboration into workflow data for industrial
-              operators and training data for frontier robotics labs.{' '}
+              operators and training data for frontier labs.{' '}
               <strong>
                 We believe human-human interaction data is robotics’ next scaling law.
               </strong>

@@ -1,6 +1,6 @@
 :root {
   --paper: #fafcfc;
-  --ink: #374147;
+  --ink: #000000;
   --accent: #7b8388;
   --accent-light: #a7adb1;
   --focus: #59666e;
@@ -24,7 +24,7 @@ body {
   overflow-x: clip;
   background-color: var(--paper);
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0.64)),
+    linear-gradient(rgba(255, 255, 255, 0.60), rgba(255, 255, 255, 0.60)),
     url('/graph-paper.png');
   background-position: left top;
   background-size: 256px 256px;
@@ -160,7 +160,7 @@ body {
 }
 
 .paint-underline:hover {
-  color: #273238;
+  color: var(--ink);
   filter: contrast(1.06);
 }
 
@@ -192,7 +192,7 @@ body {
   border: 1px solid rgba(94, 102, 108, 0.68);
   border-radius: 2px;
   background: rgba(244, 247, 247, 0.2);
-  color: #6f787e;
+  color: var(--ink);
   box-shadow:
     1px 1px 0 rgba(94, 102, 108, 0.24),
     2px 2px 0 rgba(255, 255, 255, 0.68),
@@ -229,7 +229,7 @@ body {
   justify-content: flex-end;
   gap: 0.6rem;
   margin-left: auto;
-  color: rgba(75, 84, 90, 0.82);
+  color: var(--ink);
   line-height: 1.25;
 }
 
@@ -244,7 +244,7 @@ body {
     drop-shadow(1px 1px 0 rgba(82, 91, 97, 0.36))
     drop-shadow(2px 2px 0 rgba(82, 91, 97, 0.13));
   mix-blend-mode: multiply;
-  transform: translateY(0.22em);
+  transform: translateY(0.34em);
 }
 
 .founder-names {
@@ -265,6 +265,13 @@ body {
 .founder-names .paint-underline {
   padding-bottom: 0.24em;
   white-space: nowrap;
+}
+
+.founder-names .paint-underline::after {
+  bottom: 0.14em;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.65;
 }
 
 .factory-scene {
@@ -302,42 +309,12 @@ body {
   }
 }
 
-.dot-cursor {
-  display: none;
-  position: fixed;
-  inset: 0 auto auto 0;
-  width: 29px;
-  height: 29px;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 0;
-  mix-blend-mode: normal;
-  transform: translate3d(-100px, -100px, 0) translate(-5px, -8px);
-  transform-origin: 0 0;
-  transition: opacity 100ms ease-out;
-  will-change: transform;
-}
-
-.dot-cursor img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  transform: rotate(8deg);
-  transform-origin: center;
-  user-select: none;
-}
-
-html[data-dot-cursor-capable] .dot-cursor {
-  display: block;
-}
-
-html[data-dot-cursor-live] .dot-cursor[data-visible='true'] {
-  opacity: 1;
-}
-
-html[data-dot-cursor-live],
-html[data-dot-cursor-live] * {
-  cursor: none !important;
+@media (hover: hover) and (pointer: fine) and (forced-colors: none) {
+  html,
+  body,
+  body * {
+    cursor: url('/robot-hand-cursor-small.png?v=2') 4 2, auto;
+  }
 }
 
 @media (max-width: 600px) {
@@ -406,8 +383,7 @@ html[data-dot-cursor-live] * {
     color: CanvasText;
   }
 
-  .factory-scene,
-  .dot-cursor {
+  .factory-scene {
     display: none !important;
   }
 

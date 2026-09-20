@@ -58,20 +58,19 @@ while (queueHead < queueTail) {
   if (y + 1 < height) enqueue(pixelIndex + width);
 }
 
-const ink = { r: 18, g: 18, b: 18 };
-
 for (let pixelIndex = 0; pixelIndex < pixelCount; pixelIndex += 1) {
   const offset = pixelIndex * channels;
 
-  if (exterior[pixelIndex]) {
+  if (exterior[pixelIndex] || data[offset + 3] === 0) {
     data[offset + 3] = 0;
     continue;
   }
 
-  const luminance = (data[offset] + data[offset + 1] + data[offset + 2]) / (3 * 255);
-  data[offset] = Math.round(ink.r + (255 - ink.r) * luminance);
-  data[offset + 1] = Math.round(ink.g + (255 - ink.g) * luminance);
-  data[offset + 2] = Math.round(ink.b + (255 - ink.b) * luminance);
+  const luminance = (data[offset] + data[offset + 1] + data[offset + 2]) / 3;
+  const tone = luminance >= 170 ? 255 : 0;
+  data[offset] = tone;
+  data[offset + 1] = tone;
+  data[offset + 2] = tone;
   data[offset + 3] = 255;
 }
 
@@ -79,8 +78,8 @@ const transparent = { r: 255, g: 255, b: 255, alpha: 0 };
 const isolatedHand = await sharp(data, { raw: { width, height, channels } }).png().toBuffer();
 
 await sharp(isolatedHand)
-  .rotate(-45, { background: transparent })
+  .rotate(-25, { background: transparent })
   .trim({ background: transparent, threshold: 2 })
-  .resize({ width: 128, height: 128, fit: 'contain', background: transparent })
+  .resize({ width: 22, height: 22, fit: 'contain', background: transparent })
   .png()
   .toFile(outputPath);
