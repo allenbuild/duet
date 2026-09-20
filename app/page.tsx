@@ -122,10 +122,9 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="copy-section contact-section" aria-labelledby="contact-heading">
-            <h2 id="contact-heading">Contact</h2>
+          <section className="copy-section contact-section" aria-label="We’re hiring">
             <p>
-              We’re hiring. If you’re exceptional with multimodal sensing, data infra, or
+              <strong>We’re hiring.</strong> If you’re exceptional with multimodal sensing, data infra, or
               ops, email{' '}
               <a className="paint-underline" href="mailto:allen@duetlabs.co">
                 allen@duetlabs.co
