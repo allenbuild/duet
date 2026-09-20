@@ -105,7 +105,7 @@ body {
 }
 
 .list-intro {
-  margin-bottom: -0.42em !important;
+  margin-bottom: 0.35em !important;
 }
 
 .copy-section > .dash-list {
@@ -269,13 +269,13 @@ body {
 
 .factory-scene {
   width: 100%;
-  height: clamp(13rem, 30vw, 30rem);
+  aspect-ratio: 1672 / 790;
   margin: 0;
   flex: none;
   overflow: hidden;
-  background-image: url('/factory-linework.jpeg');
+  background-image: url('/factory-linework-wide.png');
   background-position: center top;
-  background-size: 100% 111.15%;
+  background-size: 100% auto;
   background-repeat: no-repeat;
   filter: grayscale(1) contrast(1.06);
   mix-blend-mode: multiply;
