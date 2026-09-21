@@ -16,10 +16,11 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-warm.png',
-        width: 1734,
-        height: 907,
-        alt: 'Duet Labs.',
+        url: '/og-factory.png',
+        width: 1200,
+        height: 630,
+        type: 'image/png',
+        alt: 'Factory line drawing on Duet Labs’ graph-paper background.',
       },
     ],
   },
@@ -28,7 +29,12 @@ export const metadata: Metadata = {
     title: 'Duet Labs',
     description:
       'A data layer for human collaboration: workflow intelligence for operators and training data for robots.',
-    images: ['/og-warm.png'],
+    images: [
+      {
+        url: '/og-factory.png',
+        alt: 'Factory line drawing on Duet Labs’ graph-paper background.',
+      },
+    ],
   },
 };
 
