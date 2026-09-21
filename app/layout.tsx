@@ -1,13 +1,5 @@
 import type { Metadata } from 'next';
-import { Newsreader } from 'next/font/google';
 import './globals.css';
-
-const newsreader = Newsreader({
-  variable: '--font-newsreader',
-  subsets: ['latin'],
-  display: 'swap',
-  style: ['normal', 'italic'],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.duetlabs.co'),
@@ -47,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={newsreader.variable}>
+      <body>
         {children}
       </body>
     </html>
