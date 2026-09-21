@@ -338,7 +338,7 @@ body {
   }
 
   body {
-    font-size: calc(var(--copy-size) - 2px);
+    font-size: clamp(0.5rem, calc((100vw - 2rem) / 36), calc(var(--copy-size) - 2px));
   }
 
   .letter {
@@ -384,6 +384,16 @@ body {
   }
 
   .factory-scene {
+    height: 66.986vw;
+    filter: none;
+    mix-blend-mode: normal;
+    opacity: 1;
+  }
+
+  .factory-scene::before {
+    width: 160%;
+    background-size: 100% auto;
+    mix-blend-mode: multiply;
     opacity: 0.44;
   }
 }
