@@ -344,7 +344,7 @@ body {
   .letter {
     width: calc(100% - 2rem);
     padding-top: 2rem;
-    padding-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
   }
 
   .letter ul {
@@ -361,6 +361,7 @@ body {
 
   .site-footer {
     width: calc(100% - 2rem);
+    padding-bottom: 0.5rem;
     flex-direction: column-reverse;
     align-items: flex-start;
   }
