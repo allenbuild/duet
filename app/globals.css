@@ -7,6 +7,7 @@
   --copy-size: clamp(0.9rem, 0.86rem + 0.12vw, 1.02rem);
   --flow-gap: 1.08em;
   --section-gap: 1.65em;
+  --content-width: 90ch;
 }
 
 * {
@@ -24,7 +25,7 @@ body {
   overflow-x: clip;
   background-color: var(--paper);
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.60), rgba(255, 255, 255, 0.60)),
+    linear-gradient(rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.52)),
     url('/graph-paper.png');
   background-position: left top;
   background-size: 256px 256px;
@@ -55,7 +56,7 @@ body {
 }
 
 .letter {
-  width: min(calc(100% - 3rem), 78ch);
+  width: min(calc(100% - 3rem), var(--content-width));
   margin: 0 auto;
   padding-top: clamp(1.5rem, 3vw, 2.75rem);
   padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
@@ -72,6 +73,14 @@ body {
 .letter p,
 .letter ul {
   margin-top: 0;
+}
+
+.letter p {
+  text-wrap: balance;
+}
+
+.letter li {
+  text-wrap: pretty;
 }
 
 .copy-section > p,
@@ -175,7 +184,7 @@ body {
 }
 
 .site-footer {
-  width: min(calc(100% - 3rem), 78ch);
+  width: min(calc(100% - 3rem), var(--content-width));
   margin: auto auto 0;
   padding: 0 0 clamp(1.4rem, 3vw, 2.4rem);
   display: flex;
@@ -225,6 +234,8 @@ body {
 
 .linkedin-row {
   display: flex;
+  min-width: 0;
+  max-width: 100%;
   align-items: baseline;
   justify-content: flex-end;
   gap: 0.6rem;
@@ -249,6 +260,7 @@ body {
 
 .founder-names {
   display: flex;
+  min-width: 0;
   align-items: center;
   justify-content: flex-end;
   flex-wrap: wrap;
@@ -328,8 +340,12 @@ body {
     --section-gap: 1.7em;
   }
 
+  body {
+    font-size: calc(var(--copy-size) - 2px);
+  }
+
   .letter {
-    width: min(calc(100% - 2rem), 78ch);
+    width: calc(100% - 2rem);
     padding-top: 2rem;
     padding-bottom: 2.5rem;
   }
@@ -347,7 +363,7 @@ body {
   }
 
   .site-footer {
-    width: min(calc(100% - 2rem), 78ch);
+    width: calc(100% - 2rem);
     flex-direction: column-reverse;
     align-items: flex-start;
   }
