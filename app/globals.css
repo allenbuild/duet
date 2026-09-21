@@ -75,12 +75,9 @@ body {
   margin-top: 0;
 }
 
-.letter p {
-  text-wrap: balance;
-}
-
+.letter p,
 .letter li {
-  text-wrap: pretty;
+  text-wrap: wrap;
 }
 
 .copy-section > p,
