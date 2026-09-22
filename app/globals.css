@@ -322,14 +322,6 @@ body {
   }
 }
 
-@media (hover: hover) and (pointer: fine) and (forced-colors: none) {
-  html,
-  body,
-  body * {
-    cursor: url('/robot-hand-cursor-small.png?v=2') 4 2, auto;
-  }
-}
-
 @media (max-width: 600px) {
   :root {
     --copy-size: 0.92rem;
