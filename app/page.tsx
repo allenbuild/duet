@@ -71,10 +71,10 @@ export default function Home() {
             </ul>
 
             <p>
-              And of course, we capture these interactions across diverse, real-world
-              worksites. One dataset, two customers: each deployment improves operations
-              for teams today and builds training data for robots working alongside them
-              tomorrow.
+              And, of course, we capture these interactions across diverse, real-world
+              worksites. One dataset, two customers: 1) Operators receive workflow
+              intelligence to reduce bottlenecks for teams. 2) Labs receive training data
+              for robots working alongside them tomorrow.
             </p>
           </section>
 
