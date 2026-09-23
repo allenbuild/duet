@@ -10,8 +10,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   icons: {
-    icon: [{ url: '/duet-favicon.png?v=4', type: 'image/png', sizes: '1254x1254' }],
-    shortcut: '/duet-favicon.png?v=4',
+    icon: [{ url: '/duet-favicon.png?v=5', type: 'image/png', sizes: '1254x1254' }],
+    shortcut: '/duet-favicon.png?v=5',
   },
   openGraph: {
     title: 'Duet Labs',
