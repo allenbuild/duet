@@ -72,6 +72,10 @@ body {
   line-height: 1.25;
 }
 
+.letter h1 {
+  font-size: calc(1em + 0.25rem);
+}
+
 .letter p,
 .letter ul {
   margin-top: 0;
