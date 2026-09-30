@@ -35,10 +35,10 @@ export default function Home() {
 
           <section className="copy-section" aria-label="Market data">
             <p className="list-intro">So, naturally, some data:</p>
-            <ul className="dash-list">
+            <ul>
               {marketShifts.map(({ label, description }) => (
                 <li key={label}>
-                  {label}: {description}
+                  <em>{label}:</em> {description}
                 </li>
               ))}
             </ul>

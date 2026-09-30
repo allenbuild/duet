@@ -114,33 +114,12 @@ body {
   margin-bottom: 0.4em !important;
 }
 
-.copy-section > .dash-list {
-  margin-bottom: var(--flow-gap);
-}
-
 .letter li {
   padding-left: 0.28em;
 }
 
 .letter li::marker {
   font-size: 0.72em;
-}
-
-.dash-list {
-  list-style: none;
-  padding-left: 2.8em !important;
-}
-
-.dash-list li {
-  position: relative;
-  padding-left: 0;
-}
-
-.dash-list li::before {
-  content: '–';
-  position: absolute;
-  left: -2em;
-  color: var(--accent);
 }
 
 .paint-underline {
@@ -288,14 +267,6 @@ body {
 
   .letter ul {
     padding-left: 1.45em;
-  }
-
-  .dash-list {
-    padding-left: 2.15em !important;
-  }
-
-  .dash-list li::before {
-    left: -1.55em;
   }
 
   .site-footer {
