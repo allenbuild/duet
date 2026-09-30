@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
-const favicon = '/duet-overlap-favicon.png';
+const favicon = '/duet-overlap-favicon-full.png';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.duetlabs.co'),
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   icons: {
-    icon: [{ url: favicon, type: 'image/png', sizes: '940x940' }],
+    icon: [{ url: favicon, type: 'image/png', sizes: '400x400' }],
     shortcut: favicon,
   },
   openGraph: {
