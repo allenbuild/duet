@@ -32,7 +32,7 @@ body {
   background-repeat: repeat;
   color: var(--ink);
   font-family: 'Times New Roman', Times, serif;
-  font-size: calc(var(--copy-size) - 1px);
+  font-size: var(--copy-size);
   font-weight: 400;
   line-height: 1.36;
   letter-spacing: -0.005em;
@@ -59,7 +59,7 @@ body {
   width: min(calc(100% - 3rem), var(--content-width));
   margin: 0 auto;
   padding-top: clamp(1.5rem, 3vw, 2.75rem);
-  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  padding-bottom: var(--section-gap);
 }
 
 .letter h1,
@@ -161,7 +161,7 @@ body {
 
 .site-footer {
   width: min(calc(100% - 3rem), var(--content-width));
-  margin: auto auto 0;
+  margin: 0 auto;
   padding: 0 0 clamp(1.4rem, 3vw, 2.4rem);
   display: flex;
   align-items: flex-end;
@@ -188,7 +188,7 @@ body {
   justify-content: flex-end;
   flex-wrap: wrap;
   gap: 0.12rem 0.55rem;
-  font-size: calc(clamp(0.78rem, 0.74rem + 0.12vw, 0.86rem) - 1px);
+  font-size: clamp(0.78rem, 0.74rem + 0.12vw, 0.86rem);
 }
 
 .founder-link {
@@ -256,13 +256,12 @@ body {
   }
 
   body {
-    font-size: clamp(0.5rem, calc((100vw - 2rem) / 36), calc(var(--copy-size) - 2px));
+    font-size: calc(clamp(0.5rem, calc((100vw - 2rem) / 36), calc(var(--copy-size) - 2px)) + 1px);
   }
 
   .letter {
     width: calc(100% - 2rem);
     padding-top: 2rem;
-    padding-bottom: 1.5rem;
   }
 
   .letter ul {
