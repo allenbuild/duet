@@ -222,6 +222,7 @@ body {
 }
 
 .factory-scene {
+  --factory-width: 100vw;
   width: 100%;
   min-height: 0;
   margin: 0;
@@ -236,16 +237,15 @@ body {
 .factory-scene::before {
   content: '';
   position: absolute;
-  /* Size by viewport width so the drawing's side edges never sit inside the page. */
+  /* Keep the panorama edge-to-edge; shorten it to fit the full waterfront. */
   top: 0;
   left: 50%;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1672 / 700;
+  width: var(--factory-width);
+  height: min(calc(var(--factory-width) * 700 / 1672), 120%);
   transform: translate(-50%, -18%);
   background-image: url('/factory-linework-wide.png?v=4');
   background-position: center top;
-  background-size: 100% auto;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 
@@ -305,13 +305,13 @@ body {
   }
 
   .factory-scene {
+    --factory-width: 140vw;
     filter: none;
     mix-blend-mode: normal;
     opacity: 1;
   }
 
   .factory-scene::before {
-    width: 140%;
     mix-blend-mode: multiply;
     opacity: 0.44;
   }
