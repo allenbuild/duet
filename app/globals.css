@@ -236,13 +236,17 @@ body {
 .factory-scene::before {
   content: '';
   position: absolute;
-  /* Crop the empty sky without stretching the factory or adding page height. */
-  inset: -7.5vw auto 0 50%;
+  /* Fit the artwork and remove only its blank sky, without adding page height. */
+  top: 0;
+  left: 50%;
   width: 100%;
-  transform: translateX(-50%);
+  height: auto;
+  aspect-ratio: 1672 / 700;
+  max-height: 120%;
+  transform: translate(-50%, -18%);
   background-image: url('/factory-linework-wide.png?v=4');
   background-position: center top;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
@@ -308,8 +312,7 @@ body {
   }
 
   .factory-scene::before {
-    top: -12vw;
-    width: 160%;
+    width: 140%;
     mix-blend-mode: multiply;
     opacity: 0.44;
   }
