@@ -1,28 +1,13 @@
-const collaborationDimensions = [
-  {
-    label: 'Physical coordination',
-    description: 'handoffs, shared loads, joint manipulation',
-  },
-  {
-    label: 'Task coordination',
-    description: 'role division, sequencing, turn-taking',
-  },
-  {
-    label: 'Interactive adaptation',
-    description: 'intent signaling, response, correction, recovery',
-  },
-];
-
 const marketShifts = [
   {
     label: 'Supply-side',
     description:
-      'Factories are generating more data, with 78% of large manufacturers putting over 20% of improvement budgets into smart manufacturing (Deloitte, 2025).',
+      'Factories are generating more data, with 78% of manufacturers putting 20% of budgets into smart manufacturing (Deloitte, 2025).',
   },
   {
     label: 'Model-side',
     description:
-      'Robots are learning more from data, with 1,000× more pretraining raising average task performance from 20% to 53% (Dyna Robotics, 2026).',
+      'Robots are learning more from data, with 1,000× more pretraining raising task performance 2.5× (Dyna Robotics, 2026).',
   },
   {
     label: 'Demand-side',
@@ -33,12 +18,9 @@ const marketShifts = [
 
 const milestones = [
   'Shipped multimodal robotics hardware for frontier lab contracts',
-  'Joined HF0 (S26) and Founders, Inc. (Canopy) as Founders-in-Residence',
-  'Built assistive wearables winning millions of dollars in academic scholarships',
-  'Built edtech apps with 30k+ users and organizations teaching 4k+ students',
-  'Interviewed by Space Center Houston (2×), NBC News, ABC News, and more',
-  'Conducted ML research at Northwestern University and Boston University (RISE)',
-  'Published through IEEE, IIAI, and Harvard University',
+  'Built at HF0 Residency (S26) and Founders, Inc. (Canopy)',
+  'Built wearables ($2M+ in scholarships), edtech apps (30K+ users), nonprofits (4K+ students)',
+  'Published ML research through IEEE, IIAI, and Harvard',
 ];
 
 export default function Home() {
@@ -46,80 +28,35 @@ export default function Home() {
     <div className="page-shell">
       <main className="site-main">
         <article className="letter">
-          <section className="copy-section" aria-labelledby="thesis-heading">
-            <h1 id="thesis-heading">Thesis</h1>
-            <p>
-              Duet process-mines human collaboration into workflow data for industrial
-              operators and training data for frontier labs.{' '}
-              <strong>
-                We believe human-human interaction data is robotics’ next scaling law.
-              </strong>
-            </p>
-
-            <p className="list-intro">
-              General-purpose robots have seen millions of hours of people working alone,
-              and almost none of people working together. To our knowledge, ETH Zurich’s
-              CoMind is the largest paired human-collaboration dataset at just 41 hours.
-              Duet’s dataset captures what single-actor data misses:
-            </p>
-            <ul className="dash-list">
-              {collaborationDimensions.map(({ label, description }) => (
-                <li key={label}>
-                  <em>{label}:</em> {description}
-                </li>
-              ))}
-            </ul>
-
-            <p>
-              And, of course, we capture these interactions across diverse, real-world
-              worksites. One dataset, two customers: 1) Operators receive workflow
-              intelligence to reduce bottlenecks for teams. 2) Labs receive training data
-              for robots working alongside them tomorrow.
-            </p>
+          <section className="copy-section" aria-labelledby="duet-heading">
+            <h1 id="duet-heading">Duet</h1>
+            <p>We’re building a new data layer for physical AI.</p>
           </section>
 
-          <section className="copy-section" aria-labelledby="why-now-heading">
-            <h2 id="why-now-heading">Why Now</h2>
-            <p className="list-intro">Duet is a bet on three converging shifts:</p>
+          <section className="copy-section" aria-label="Market data">
+            <p className="list-intro">So, naturally, some data:</p>
             <ul className="dash-list">
               {marketShifts.map(({ label, description }) => (
                 <li key={label}>
-                  <em>{label}:</em> {description}
+                  {label}: {description}
                 </li>
               ))}
             </ul>
           </section>
 
-          <section className="copy-section" aria-labelledby="why-us-heading">
-            <h2 id="why-us-heading">Why Us</h2>
-            <p>
-              <em>In elementary school,</em> Andrew interviewed South Korea’s president for
-              a class project on the country’s semiconductor industry. Allen presented on
-              self-driving LiDAR with an ISEF winner. Idhant convinced his teacher to give
-              him lessons in string theory.
-            </p>
-
-            <p>
-              <em>In middle school,</em> Allen placed 7th at the FTC Robotics World
-              Championships against teams dominated by high school seniors. Idhant pitched
-              to Mastercard. Andrew raised a $30k fund, now up 274%.
-            </p>
-
+          <section className="copy-section" aria-label="About Duet">
             <div className="milestones">
-              <p>Since then, we’ve:</p>
+              <p>A little about us:</p>
               <ul>
                 {milestones.map((milestone) => (
                   <li key={milestone}>{milestone}</li>
                 ))}
               </ul>
             </div>
+          </section>
 
-            <div className="turn">
-              <p>
-                We’ve spent most of our lives building robots.{' '}
-                <em>This time, we’re building the data layer they learn from.</em>
-              </p>
-            </div>
+          <section className="copy-section" aria-label="Funding">
+            <p>We’ve raised <strong>$XXXK</strong> to prove robotics’ next scaling law.</p>
           </section>
 
           <section className="copy-section contact-section" aria-label="We’re hiring">
