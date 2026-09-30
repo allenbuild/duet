@@ -197,11 +197,13 @@ body {
   gap: 0.55rem;
 }
 
+.contact-section .paint-underline,
 .founder-names .paint-underline {
   padding-bottom: 0.24em;
   white-space: nowrap;
 }
 
+.contact-section .paint-underline::after,
 .founder-names .paint-underline::after {
   bottom: 0.14em;
   height: 1px;
