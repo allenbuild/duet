@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
-// Explicitly leave the tab icon blank instead of reusing the old custom icon.
-const blankFavicon =
-  'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22/%3E';
+const favicon = '/duet-overlap-favicon.png';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.duetlabs.co'),
@@ -14,8 +12,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   icons: {
-    icon: [{ url: blankFavicon, type: 'image/svg+xml', sizes: '16x16' }],
-    shortcut: blankFavicon,
+    icon: [{ url: favicon, type: 'image/png', sizes: '940x940' }],
+    shortcut: favicon,
   },
   openGraph: {
     title: 'Duet Labs',
