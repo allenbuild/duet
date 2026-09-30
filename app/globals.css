@@ -17,6 +17,7 @@
 html {
   min-height: 100%;
   background: var(--paper);
+  overscroll-behavior-y: none;
 }
 
 body {
@@ -46,8 +47,9 @@ body {
 
 .page-shell {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
   overflow-x: clip;
 }
 
@@ -217,9 +219,8 @@ body {
 
 .factory-scene {
   width: 100%;
-  height: min(41.87vw, 40rem);
+  min-height: 0;
   margin: 0;
-  flex: none;
   position: relative;
   overflow: hidden;
   filter: grayscale(1) contrast(1.06);
@@ -231,12 +232,13 @@ body {
 .factory-scene::before {
   content: '';
   position: absolute;
-  inset: 0 auto 0 50%;
+  /* Crop the empty sky without stretching the factory or adding page height. */
+  inset: -7.5vw auto 0 50%;
   width: 100%;
   transform: translateX(-50%);
   background-image: url('/factory-linework-wide.png?v=4');
   background-position: center top;
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -296,15 +298,14 @@ body {
   }
 
   .factory-scene {
-    height: 66.986vw;
     filter: none;
     mix-blend-mode: normal;
     opacity: 1;
   }
 
   .factory-scene::before {
+    top: -12vw;
     width: 160%;
-    background-size: 100% auto;
     mix-blend-mode: multiply;
     opacity: 0.44;
   }
