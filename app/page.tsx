@@ -63,8 +63,8 @@ export default function Home() {
             <p>
               <strong>We’re hiring.</strong> If you’re exceptional with multimodal sensing, data infra, or
               ops, email{' '}
-              <a className="paint-underline" href="mailto:allen@duetlabs.co">
-                allen@duetlabs.co
+              <a className="paint-underline" href="mailto:research@duetlabs.co">
+                research@duetlabs.co
               </a>
               .
             </p>
