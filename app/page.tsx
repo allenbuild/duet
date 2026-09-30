@@ -2,7 +2,7 @@ const marketShifts = [
   {
     label: 'Supply-side',
     description:
-      'Factories are generating more data, with 78% of manufacturers putting 20% of budgets into smart manufacturing (Deloitte, 2025).',
+      'Factories are generating more data, with 78% of manufacturers putting 20% of improvement budgets into smart manufacturing (Deloitte, 2025).',
   },
   {
     label: 'Model-side',
