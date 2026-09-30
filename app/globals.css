@@ -236,17 +236,16 @@ body {
 .factory-scene::before {
   content: '';
   position: absolute;
-  /* Fit the artwork and remove only its blank sky, without adding page height. */
+  /* Size by viewport width so the drawing's side edges never sit inside the page. */
   top: 0;
   left: 50%;
   width: 100%;
   height: auto;
   aspect-ratio: 1672 / 700;
-  max-height: 120%;
   transform: translate(-50%, -18%);
   background-image: url('/factory-linework-wide.png?v=4');
   background-position: center top;
-  background-size: contain;
+  background-size: 100% auto;
   background-repeat: no-repeat;
 }
 
