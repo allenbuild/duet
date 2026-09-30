@@ -5,8 +5,8 @@
   --accent-light: #a7adb1;
   --focus: #59666e;
   --copy-size: clamp(0.9rem, 0.86rem + 0.12vw, 1.02rem);
-  --flow-gap: 1.08em;
-  --section-gap: 1.65em;
+  --flow-gap: 0.98em;
+  --section-gap: 1.45em;
   --content-width: 90ch;
 }
 
@@ -34,7 +34,7 @@ body {
   font-family: 'Times New Roman', Times, serif;
   font-size: var(--copy-size);
   font-weight: 400;
-  line-height: 1.36;
+  line-height: 1.32;
   letter-spacing: -0.005em;
   font-optical-sizing: auto;
   text-rendering: optimizeLegibility;
@@ -64,7 +64,7 @@ body {
 
 .letter h1,
 .letter h2 {
-  margin: 0 0 0.12em;
+  margin: 0 0 0.1em;
   font: inherit;
   font-weight: 700;
   line-height: 1.25;
@@ -111,7 +111,7 @@ body {
 }
 
 .list-intro {
-  margin-bottom: 0.4em !important;
+  margin-bottom: 0.3em !important;
 }
 
 .letter li {
@@ -162,7 +162,7 @@ body {
 .site-footer {
   width: min(calc(100% - 3rem), var(--content-width));
   margin: 0 auto;
-  padding: 0 0 clamp(1.4rem, 3vw, 2.4rem);
+  padding: 0 0 clamp(1.25rem, 2.7vw, 2.15rem);
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -251,8 +251,8 @@ body {
 @media (max-width: 600px) {
   :root {
     --copy-size: 0.92rem;
-    --flow-gap: 1.12em;
-    --section-gap: 1.7em;
+    --flow-gap: 1.02em;
+    --section-gap: 1.5em;
   }
 
   body {
@@ -270,7 +270,7 @@ body {
 
   .site-footer {
     width: calc(100% - 2rem);
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.45rem;
     flex-direction: column-reverse;
     align-items: flex-start;
   }
