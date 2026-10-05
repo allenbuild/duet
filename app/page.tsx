@@ -7,7 +7,7 @@ const marketShifts = [
   {
     label: 'Model-side',
     description:
-      'Robots are learning more from data, with 1,000× more pretraining raising task performance 2.5× (Dyna Robotics, 2026).',
+      'Robots are learning more from data, with 1,000× more pretraining raising task performance by over 2.5× (Dyna Robotics, 2026).',
   },
   {
     label: 'Demand-side',
