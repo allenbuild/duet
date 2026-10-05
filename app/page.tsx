@@ -18,7 +18,7 @@ const marketShifts = [
 
 const milestones = [
   'Shipped multimodal robotics hardware for frontier lab contracts',
-  'Built at HF0 Residency (S26) and Founders, Inc. (Canopy)',
+  'Fellows-in-Residence at HF0 (S26) and Founders, Inc. (Canopy)',
   'Built wearables ($2M+ in scholarships), edtech apps (30K+ users), nonprofits (10K+ students)',
   'Published ML research through IEEE, IIAI, and Harvard',
 ];
