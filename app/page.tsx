@@ -2,7 +2,7 @@ const milestones = [
   'Shipped multimodal robotics hardware for frontier lab contracts',
   'Fellows-in-Residence at HF0 (S26) and Founders, Inc. (Canopy)',
   'Built wearables ($2M+ in scholarships), edtech apps (30K+ users), nonprofits (10K+ students)',
-  'Published ML research through IEEE, IIAI, and Harvard',
+  'Published ML research through NeurIPS, IEEE, IIAI, and Harvard',
 ];
 
 export default function Home() {
