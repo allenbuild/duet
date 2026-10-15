@@ -1,21 +1,3 @@
-const marketShifts = [
-  {
-    label: 'Supply-side',
-    description:
-      'Factories are generating more data, with 78% of manufacturers putting 20% of improvement budgets into smart manufacturing (Deloitte, 2025).',
-  },
-  {
-    label: 'Model-side',
-    description:
-      'Robots are learning more from data, with 1,000× more pretraining raising task performance by over 2.5× (Dyna Robotics, 2026).',
-  },
-  {
-    label: 'Demand-side',
-    description:
-      'Labs are spending more on data, with robotics data spend expected to exceed $3B over the next two years (Bessemer, 2026).',
-  },
-];
-
 const milestones = [
   'Shipped multimodal robotics hardware for frontier lab contracts',
   'Fellows-in-Residence at HF0 (S26) and Founders, Inc. (Canopy)',
@@ -33,15 +15,14 @@ export default function Home() {
             <p>We’re building a new data layer for physical AI.</p>
           </section>
 
-          <section className="copy-section" aria-label="Market data">
-            <p className="list-intro">So, naturally, some data:</p>
-            <ul>
-              {marketShifts.map(({ label, description }) => (
-                <li key={label}>
-                  <em>{label}:</em> {description}
-                </li>
-              ))}
-            </ul>
+          <section className="copy-section" aria-label="Our belief">
+            <p>
+              The biggest leaps in human progress have come from breakthroughs in collaboration.
+              Factories brought hundreds of workers under one roof. Assembly lines brought thousands
+              of hands into one workflow. The internet brought billions of people into one network.
+              We believe humanity’s greatest achievement will come from teaching robots to collaborate
+              with us and each other.
+            </p>
           </section>
 
           <section className="copy-section" aria-label="About Duet">
