@@ -12,7 +12,6 @@ export default function Home() {
         <article className="letter">
           <section className="copy-section" aria-labelledby="duet-heading">
             <h1 id="duet-heading">Duet</h1>
-            <p>We’re building a new data layer for physical AI.</p>
           </section>
 
           <section className="copy-section" aria-label="Our belief">
@@ -36,10 +35,6 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="copy-section" aria-label="Funding">
-            <p>We’ve raised <strong>$XXXK</strong> to prove robotics’ next scaling law.</p>
-          </section>
-
           <section className="copy-section contact-section" aria-label="We’re hiring">
             <p>
               <strong>We’re hiring.</strong> If you’re exceptional with multimodal sensing, data infra, or
@@ -52,42 +47,6 @@ export default function Home() {
           </section>
         </article>
       </main>
-
-      <footer className="site-footer">
-        <nav className="linkedin-row" aria-label="Duet Labs founders on LinkedIn">
-          <div className="founder-names">
-            <span className="founder-link">
-              <a
-                className="paint-underline"
-                href="https://www.linkedin.com/in/idhant-ranjan-078104254"
-                aria-label="Idhant Ranjan on LinkedIn"
-              >
-                Idhant Ranjan
-              </a>
-            </span>
-            <span className="founder-link">
-              <span aria-hidden="true">·</span>
-              <a
-                className="paint-underline"
-                href="https://www.linkedin.com/in/andrewheejay"
-                aria-label="Andrew Lee on LinkedIn"
-              >
-                Andrew Lee
-              </a>
-            </span>
-            <span className="founder-link">
-              <span aria-hidden="true">·</span>
-              <a
-                className="paint-underline"
-                href="https://www.linkedin.com/in/allenjxu"
-                aria-label="Allen Xu on LinkedIn"
-              >
-                Allen Xu
-              </a>
-            </span>
-          </div>
-        </nav>
-      </footer>
 
       <div className="factory-scene" aria-hidden="true" />
     </div>
