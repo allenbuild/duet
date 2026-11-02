@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
-const favicon = '/duet-geometric-favicon.png';
+const favicon = '/duet-geometric-favicon-small.png';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.duetlabs.co'),
